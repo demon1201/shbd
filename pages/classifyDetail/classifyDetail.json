@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "山海半岛",
+  "usingComponents": {
+    "navBar": "/pages/components/navbar/navbar",
+    "pickerYMDHM": "../components/pickerYMDHM/pickerYMDHM"
+  }
+}

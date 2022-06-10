@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-gallery": "weui-miniprogram/gallery/gallery"
+  },
+  "navigationStyle": "custom"
+}

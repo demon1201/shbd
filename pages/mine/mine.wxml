@@ -1,0 +1,94 @@
+<!--pages/mine/mine.wxml-->
+<view class="mine-page">
+<!-- 头部 -->
+  <view  class="mine-top">
+    <image src="/pages/images/top.png" class="top-bg"></image>
+    <view style="height: {{navTop*2}}rpx; width:100%;"></view>
+    <view  class="title">我的</view>
+    <!-- 个人信息 -->
+  </view>
+  <!-- 内容 -->
+ <view class="mine-con">
+  <view class="mine-person" wx:if="{{!userInfo.avatarUrl}}">
+      <image src="{{tximg}}" class="mine-tx"></image>
+      <view class="mine-mz">
+        <button style="margin-bottom: 12rpx" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="getUser">获取头像昵称</button>
+        <button style="margin-bottom: 12rpx" wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="getUser">获取头像昵称</button>
+
+
+        <view class="phone {{!tel?'get-phone':''}}">{{tel?tel:'获取手机号'}} <button wx:if="{{!tel}}"
+							open-type="getPhoneNumber" bindgetphonenumber='getPhone'></button> </view>
+        <!-- <view>{{!phone?phone:'获取手机号'}}</view> -->
+      </view>
+    </view>
+    <view class="mine-person" wx:else>
+      <image src="{{userInfo.avatarUrl}}" class="mine-tx"></image>
+      <view class="mine-mz">
+        <view style="margin-bottom: 12rpx">{{userInfo.nickName}}</view>
+        <!-- <view>{{tel}}</view>
+         -->
+         <view class="phone {{!tel?'get-phone':''}}">{{tel?tel:'获取手机号'}} <button wx:if="{{!tel}}"
+							open-type="getPhoneNumber" bindgetphonenumber='getPhone'></button> </view>
+      </view>
+    </view>
+  <view class="vip-con">
+    <view class="vip" wx:if="{{vip==1}}"  bindtap="toVip">
+      <image src="/pages/images/vip/v1.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v11.png" class="vip_ico"></image>
+        <text class="vip_t1">普通会员</text>
+        <text class="vip_t2">升级银海湾星钻卡，享受更多权益！</text>
+        <image src="/pages/images/vip/v111.png" class="vip_btn"  bindtap="toVip"></image>
+      </view>
+    </view>
+    <view class="vip" wx:if="{{vip==2}}"  bindtap="toVip">
+      <image src="/pages/images/vip/v2.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v22.png" class="vip_ico"></image>
+        <text class="vip_t1 vip_t21">星河会员</text>
+        <text class="vip_t2 vip_t21">升级银海湾星钻卡，享受更多权益！</text>
+        <image src="/pages/images/vip/v222.png" class="vip_btn" bindtap="toVip"></image>
+      </view>
+    </view>
+    <view class="vip" wx:if="{{vip==3}}"  bindtap="toVip">
+      <image src="/pages/images/vip/v3.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v33.png" class="vip_ico"></image>
+        <text class="vip_t1 vip_31">业主</text>
+        <text class="vip_t2 vip_32">升级银海湾星钻卡，享受更多权益！</text>
+        <image src="/pages/images/vip/v333.png" class="vip_btn" bindtap="toVip"></image>
+      </view>
+    </view>
+    <view class="vip" wx:if="{{vip==4}}" bindtap="toVip">
+      <image src="/pages/images/vip/v4.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v44.png" class="vip_ico"></image>
+        <text class="vip_t1 vip_41" style="color:#C48821">银海湾星钻卡</text>
+        <text class="vip_t2 vip_42" style="color:#DDB26B">尊敬的银海湾星钻会员！</text>
+        <image src="/pages/images/vip/v444.png" class="vip_btn xz"  bindtap="toVip"></image>
+      </view>
+    </view>
+    <view class="vip" wx:if="{{vip==5}}" bindtap="toVip">
+      <image src="/pages/images/vip/v5.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v55.png" class="vip_ico"></image>
+        <text class="vip_t1 vip_51" style="color:#C48821">星河控股员工</text>
+        <text class="vip_t2 vip_52" style="color:#DDB26B">升级银海湾星钻卡</text>
+        <image src="/pages/images/vip/v555.png" class="vip_btn xz"  bindtap="toVip"></image>
+      </view>
+    </view>
+  </view>
+  <view class="me-fw">
+  <view class="mine-con__title">我的服务</view>
+  <view class="mine-con__items">
+    <view class="mine-con__item" wx:for="{{items}}" bindtap="toMyType" data-url="{{item.category_url}}">
+      <view class="mine-con__item_left" data-idx="{{index}}">
+        <image src="{{url}}{{item.ioc}}" class="mine-con__item_icon" data-idx="{{index}}"></image>
+        <view data-idx="{{index}}">{{item.category_title}}</view>
+      </view>
+      <image data-idx="{{index}}" src="../images/7.png" class="next"></image>
+    </view>
+  </view>
+</view>
+ </view> 
+</view>

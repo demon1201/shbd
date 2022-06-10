@@ -1,0 +1,140 @@
+/* pages/login/login.wxss */
+.container{
+  padding: 75rpx;
+  padding-top: 150rpx;
+}
+.logo{
+  width: 230rpx;
+  height: 127rpx;
+  margin: 0 auto;
+  margin-bottom: 180rpx;
+}
+.logo image{
+  vertical-align: super;
+}
+.login-bar{
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #05b315;
+  color: #fff;
+  letter-spacing: 2rpx;
+  /* line-height: 80rpx ; */
+  text-align: center;
+  font-size: 30rpx;
+  margin: 0 auto;
+  border-radius: 40rpx;
+  position: relative;
+}
+.login-bar button {
+  width: 100% !important;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+  .enter_info {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+.enter_rel {
+  position: relative;
+  border: 2rpx solid white;
+  width: 80%;
+  height: 400rpx;
+  margin-top: 35%;
+  margin-left: 10%;
+  background-color: white;
+}
+
+.enter_tip {
+  color: #015fbc;
+  font-size: 40rpx;
+  text-align: center;
+  margin-top: 5%;
+  font-weight: bold;
+}
+
+.enter_p {
+  margin-top: 4%;
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.enter_rel .enter_cancel {
+  position: absolute;
+  width: 50% !important;
+  bottom: 0;
+  border: 2rpx solid #e9e9e9;
+  left: 0;
+  height: 20%;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.enter_rel .enter_btn {
+  position: absolute;
+  width: 50% !important;
+  bottom: 0;
+  border: 2rpx solid #e9e9e9;
+  left: 50%;
+  height: 20%;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.2;
+  color: #004f9f;
+}
+.blo{
+  display: block;
+}
+.dis{
+  display: none;
+}
+.btn2 button{
+  width: 90%;
+  height: 80rpx;
+  margin-top: 3%;
+  background-color: #999999;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: white;
+  padding: 0;
+    letter-spacing: 2rpx;
+}
+button:not([size='mini']) {
+  width: auto !important;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .content_title{
+    width: 100%;
+  text-align: center;
+    margin-bottom: 92rpx;
+  font-size: 1.1rem;
+  font-weight: 900;
+  
+  }
+  .user_img{
+    width: 200rpx;
+    height: 200rpx;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 28rpx;
+    margin-top: 192rpx;
+  }
+  .content_txt{
+    width: 80%;
+  margin: auto;
+  margin-bottom: 92rpx
+  }
+  

@@ -1,0 +1,38 @@
+<!--pages/writeOffHistory/writeOffHistory.wxml-->
+<view class="page">
+     <view class="page-top">
+        <view bindtap="classification" class="{{types[0].act?'page-top__item page-top__item_active':'page-top__item'}}"data-idx="{{0}}">最近</view>
+        <view bindtap="classification" class="{{types[1].act?'page-top__item page-top__item_active':'page-top__item'}}" data-idx="{{1}}">本周</view>
+        <picker bindchange="bindPickerChange"  value="{{type}}" range="{{roles1}}">
+          <!-- <view class="picker"> -->
+        <view bindtap="classification" class="{{types[2].act?'page-top__item page-top__item_active':'page-top__item'}}" data-idx="{{2}}">{{type}}<image src="/pages/images/mine/23.png" class="icoo"></image></view>
+            <!-- {{type}} -->
+            <!-- <image src="/pages/images/d.png" class="picker_ico"></image> -->
+          <!-- </view> -->
+        </picker>
+    </view>
+
+    <view class="page-con">
+        <view class="page-con__item" wx:for="{{orders}}">
+            <view class="page-con__item_left">
+                <image src="{{item.headimgurl}}"></image>
+                <view class="left-name">{{item.nickname}}</view>
+            </view>
+            <view class="page-con__item_right">
+                <view class="right_r1">
+                    <view>订单号：{{item.transaction_id}}</view>
+                    <view>{{item.create_time}}</view>
+                    <view style="margin-top: 5rpx;">核销人：{{item.name}}</view>
+                </view>
+                <view class="right_r2">
+                    <view class="right_r11">
+                        <view class="r11_title">{{item.title}}</view>
+                        <view>规格：{{item.d_title}}</view>
+                        <view>金额：{{item.money}} 元</view>
+                    </view>
+                    <image src="{{url}}{{item.photo}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

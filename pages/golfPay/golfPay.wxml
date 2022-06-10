@@ -1,0 +1,85 @@
+<!--pages/registration/registration.wxml-->
+<view class="page">
+  <view hidden="{{!add?'':'hidden'}}">
+
+    <view class="page-calendar">
+      <calendar 
+    weeks-type="cn"
+    days-color="{{dayStyle}}"
+    binddayClick="dayClick"
+    start-date="{{startDate}}"
+    end-date="{{endDate}}"
+  />
+    </view>
+    <view class="page-con">
+      <view class="page-con__title">
+        <view class="title_item">可选
+          <image src="/pages/images/31.png"></image>
+        </view>
+        <view class="title_item">已选
+          <image src="/pages/images/32.png"></image>
+        </view>
+        <view class="title_item" style="margin-right:34rpx;">售出
+          <image src="/pages/images/33.png"></image>
+        </view>
+        <view></view>
+      </view>
+      <view class="cc-title">场次</view>
+      <view class="page-con-cc">
+          <view class="page-con__item" wx:for="{{lists}}" wx:for-index="idx" data-idx="{{idx}}" >
+            <view class="page-con__item_left"   data-idx="{{idx}}">{{item.TeeTime}}</view>
+            <view class="page-con__item_right"   data-idx="{{idx}}">
+              <image  data-idx="{{idx}}" data-id="{{item.GroupID}}" data-teetime="{{item.TeeTime}}" data-ind="{{ind}}" src="{{ii.type== 0?'/pages/images/31.png':ii.type==1?'/pages/images/32.png':'/pages/images/33.png'}}" wx:for="{{item.s}}" wx:for-item="ii" wx:for-index="ind" bindtap="add1"></image>
+
+              <!-- <image  data-idx="{{idx}}"  data-ind="{{ind}}" src="/pages/images/31.png" wx:for="{{item.PersonNum}}" wx:for-item="ii" wx:for-index="ind" bindtap="add1"></image> -->
+            </view>
+          </view>
+      </view>
+    </view>
+
+    <view class="page-bottom-btn" bindtap="addGuest">
+      下一步
+    </view>
+  </view>
+
+<!-- 添加客人信息 -->
+  <!-- <view class="add-guest"  hidden="{{add?'':'hidden'}}">
+    <view class="add-guest__title">
+      添加客人信息：
+    </view>
+    <view class="add-guest__item">
+      <image src="/pages/images/12.png" class="add-guest__item_ico"></image>
+      <view class="add-guest__item_self">{{myself}}</view>
+      <view style="margin-left: auto;">本人</view>
+    </view>
+    <view class="add-guest__item">
+      <image src="/pages/images/13.png" class="add-guest__item_ico"></image>
+      <view><input type="text" auto-focus placeholder="输入客人姓名" model:value='{{p1}}' bindblur="bindblur"/></view>
+    </view>
+    <view class="add-guest__item">
+      <image src="/pages/images/13.png" class="add-guest__item_ico"></image>
+      <view><input type="text" placeholder="输入客人姓名" model:value='{{p2}}' bindblur="bindblur"/></view>
+    </view>
+    <view class="add-guest__item">
+      <image src="/pages/images/13.png" class="add-guest__item_ico"></image>
+      <view><input type="text" placeholder="输入客人姓名" model:value='{{p3}}' bindblur="bindblur"/></view>
+    </view>
+    <view class="add-guest__title">
+      订单信息：
+    </view>
+    <view class="pay-box">
+      <view class="order-title">
+        <view class="add-guest__item_self">押金* {{num}}</view>
+        <view style="margin-left: auto; color: #999;">{{price}}元</view>
+      </view>
+      <view class="hr"></view>
+      <view class="sum">
+        <view>总计：{{price *num}}元</view>
+      </view>
+    </view>
+    <view class="page-bottom-btn" bindtap="addGuest">
+      下一步
+    </view>
+  </view> -->
+</view>
+

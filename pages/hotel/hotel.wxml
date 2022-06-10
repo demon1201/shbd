@@ -1,0 +1,345 @@
+<!--pages/hotel/hotel.wxml-->
+<wxs module="filters" src="./hot.wxs"></wxs>
+<navBar sorr="{{sorr}}"></navBar>
+<view class="hotel-page">
+<!-- 轮播 -->
+  <view style="height: {{navHeight*2 + 216*2}}rpx;" class="hotel-page__swiper">
+    <swiper indicator-dots="{{indicatorDots}}" style="height: {{navHeight*2 + 216*2}}rpx;"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperTab'>
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+              <image src="{{item}}" class="hotel-swiper__img"  style="height: {{navHeight*2 + 216*2}}rpx;" mode="aspectFill"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="num_box" style="top: {{navHeight*2 + 133*2}}rpx;">
+        <view class="num"> {{n}} / {{ns}} </view>
+      </view>
+    </view>
+  <!--  -->
+  <view class="hotel-con">
+  <!-- 酒店 -->
+    <view class="hotel-con__top">
+      <image src="../images/hotel/1.png" class="top_bg"></image>
+      <view class="top_con">
+        <view class="top_con_title">
+          <view class="title_txt">{{title}}</view>
+          <view style="display: flex;" wx:if="{{star != 0}}">
+            <image src="/pages/images/star.png" wx:for="{{5-(5-star)}}" class="star"></image>
+            <image src="/pages/images/star1.png" wx:for="{{5-star}}" class="star"></image>
+          </view>
+            <button open-type="share"  class="top_fenxiang">
+            <image src="../images/hotel/10.png"></image>
+            <view>分享</view>
+            </button>
+        </view>
+        <!-- tag -->
+        <view class="hotel-tag"> 
+          <view class="hotel-tag_item" wx:for="{{tags}}">{{item}}</view>
+        </view>
+        <!-- 营业时间 -->
+        <view class="openTime"> 
+          <image src="../images/hotel/6.png" class="b12"></image>
+          <view style="font-weight: 700;">营业时间：</view>
+          <view>{{openTime}}</view>
+          <!-- <view class="open_ico">
+            <image src="../images/hotel/8.png" class="open_ico1" bindtap="phone_call" data-phone="{{addressTel}}" style="z-index:9999"></image>
+            <image src="../images/hotel/7.png" style="z-index:9999" bindtap="get_map"></image>
+          </view> -->
+        </view>
+        <view class="addres">
+          <view class="addres11" bindtap="get_map">
+            <view>地图导航</view>
+            <image src="/pages/images/dd.png" class="add1"></image>
+          </view>
+          <view class="ad1"></view>
+          <view class="addres11" bindtap="phone_call" data-phone="{{addressTel}}">
+            <view>联系商家</view>
+            <image src="/pages/images/tt.png" class="add1"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="hotel-con__address">
+     
+     
+      <!-- 展示图 -->
+      <view class="address_item_imgs">
+        <image src="{{address_item_imgs[0]}}" bindtap="showh"  mode="aspectFill" data-idx="{{0}}"></image>
+        <image src="{{address_item_imgs[1]}}" bindtap="showh"  mode="aspectFill" data-idx="{{1}}"></image>
+        <image src="{{address_item_imgs[2]}}" bindtap="showh"  mode="aspectFill" data-idx="{{2}}"></image>
+      </view>
+      <mp-gallery show="{{show}}" bindhide="hide" img-urls="{{address_item_imgs}}" hide-on-click="{{true}}" current="{{current}}"></mp-gallery>
+    </view>
+
+    <view class="xs">
+      <view class="hotel-detail_item" wx:for="{{detail_items}}">
+          <image src="{{url}}{{item.ico}}"></image>
+          <view>{{item.title}}</view>
+      </view> 
+    </view>
+<!-- 早餐 -->
+    <view class="zc"> 
+      <image src="/pages/images/hotel/11.png" class="zc-ioc"></image>
+      <view style="margin-left:15rpx;">含早餐 <text style="font-weight: 400; font-size: 22rpx;">早餐时间：8：00-9：00</text> </view>
+    </view>
+
+    <!-- 入住时间 -->
+    <view class="hotel-in-item">
+      <view class="item-left">
+      <view class="in-item">
+        <view class="item-date">
+          <view mode="date" value="{{wDate}}" start="{{startDate}}" end="{{endDate1}}" bindtap="bindDateChange">
+            <view class="picker date_show_d">
+              {{date}}
+            </view>
+          </view>
+        </view>
+        <view class="item-text">入住</view>
+      </view>
+      <view class="item-ts">
+        共{{days}}晚
+      </view>
+      <view class="in-item">
+        <view class="item-date">
+          <view mode="date" value="{{wDate2}}" start="{{startDate2}}" end="{{endDate2}}" bindtap="bindDateChange2">
+            <view class="picker date_show_d">
+              {{date2}}
+            </view>
+          </view>
+        </view>
+        <view class="item-text">离店</view>
+      </view>
+    </view>
+      <image src="../images/hotel/2.png" class="in-item_next"></image>
+    </view>
+
+    <!-- 房间预定 -->
+    <view class="hotel-reserve">
+      <view class="hotel-reserve__item" wx:for="{{rooms}}" wx:for-index="idx">
+         <view class="hotel-reserve__item_show">
+         <!--  -->
+          <image src="{{url}}{{item.photo}}" class="show_img" mode="aspectFill"  bindtap="seeImg" data-url="{{url}}{{item.photo}}"></image>
+          <!--  -->
+          <view class="show-det">
+            <view class="show-title">{{item.name}}</view>
+            <view class="show-title1">{{item.remark2}}</view>
+            <view class="show-tag">
+              <view wx:for="{{item.remark}}" wx:for-item="tag">{{tag}}</view>
+            </view>
+            <view class="money">
+              <view class="money-1">
+
+                <view style="margin-bottom: -6rpx;">￥</view>
+                
+                <view wx:if='{{get_status=="节假日"}}' style="font-size:36rpx">{{filters.toFiex(item.jia_money*item.zhekou) }}</view>
+                <view wx:elif="{{get_status=='周末'}}" style="font-size:36rpx">{{filters.toFiex(item.week_money*item.zhekou)}}</view>
+                <view wx:else style="font-size:36rpx" >{{filters.toFiex(item.money*item.zhekou)}}</view>
+
+              </view>
+              <view style="margin-left: 10rpx"> 
+              <!-- 优惠 -->
+                <view class="money-3" wx:if='{{get_status=="节假日"}}'>优惠{{filters.toFiex(item.jia_money-item.jia_money*item.zhekou) }}元</view>
+                <view class="money-3" wx:elif="{{get_status=='周末'}}">优惠{{filters.toFiex(item.week_money-item.week_money*item.zhekou)}}元</view>
+                <view class="money-3" wx:else>优惠{{filters.toFiex(item.money-item.money*item.zhekou)}}元</view>
+
+                <view class="money-2" wx:if='{{get_status=="节假日"}}'>￥{{filters.toFiex(item.jia_money*1.00)}}</view>
+                <view class="money-2" wx:elif='{{get_status=="周末"}}'>￥{{filters.toFiex(item.week_money*1.00)}}</view>
+                <view class="money-2" wx:else>￥{{filters.toFiex(item.money*1.00)}}</view>
+              </view>
+            </view>
+          </view>
+          <!--  -->
+          <view class="reserve__item_right">
+            <image src="../images/hotel/23.png" class="qiang" bindtap="pay1" data-hotel="{{title}}" data-pid="{{item.id}}" data-photo="{{item.photo}}" data-title="{{item.name}}" wx:if='{{get_status=="节假日"}}' data-money="{{item.jia_money}}"  data-discount="{{item.zhekou}}" data-ya_money="{{item.ya_money}}"></image>
+
+            <image src="../images/hotel/23.png" class="qiang" bindtap="pay1"  data-hotel="{{title}}" data-pid="{{item.id}}" data-photo="{{item.photo}}" data-title="{{item.name}}" wx:elif='{{get_status=="周末"}}' data-money="{{item.week_money}}"  data-discount="{{item.zhekou}}" data-ya_money="{{item.ya_money}}"></image>
+
+            <image src="../images/hotel/23.png" class="qiang" bindtap="pay1" data-hotel="{{title}}" data-pid="{{item.id}}" data-photo="{{item.photo}}" data-title="{{item.name}}"  data-ya_money="{{item.ya_money}}" wx:else  data-money="{{item.money}}"  data-discount="{{item.zhekou}}"></image>
+
+
+            <view class="gd" bindtap="showHide" data-idx="{{idx}}">
+              <view  data-idx="{{idx}}">更多</view>
+              <image wx:if="{{item.open}}"  data-idx="{{idx}}" src="../images/hotel/3.png" class="oico"></image>
+              <image wx:else  data-idx="{{idx}}" src="../images/hotel/9.png" class="oico"></image>
+            </view>
+          </view>
+         </view>
+         <!-- 隐藏部分 -->
+         <view class="hotel-reserve__item_hide {{item.open?'':'hide'}}" >
+            <view class="hide_item">
+            <view class="hide_item_left">
+              <view class="hide_item_type">原价 > </view>
+              <view class="money">
+                <view class="money-1">
+                  <view style="margin-bottom: -6rpx;">￥</view><view style="font-size:36rpx">{{filters.toFiex(item.money*item.zhekou)}}</view> 
+                </view>
+                <view style="margin-left: 10rpx; display: flex"> 
+                  <view class="money-2">￥{{item.money}}</view>
+                  <view class="money-3" style="margin-left: 18rpx;" wx:if="{{item.money>item.money-(item.money*item.zhekou) && item.zhekou!=1}}"> 优惠{{filters.toFiex(item.money-item.money*item.zhekou)}}元  </view>
+                </view>
+              </view>
+              <view class="p_img" wx:if="{{item.money>item.money-(item.money*item.zhekou) && item.zhekou!=1}}">
+               <image src="/pages/images/hotel/a.png" class="p_img_ico"></image>
+               <text wx:if="{{vip==1}}">普通会员 {{item.zhekou*10}}折</text>
+               <text wx:if="{{vip==2}}">星河会员 {{item.zhekou*10}}折</text>
+               <text wx:if="{{vip==3}}">业主会员 {{item.zhekou*10}}折</text>
+               <text wx:if="{{vip==4}}">星钻卡会员 {{item.zhekou*10}}折</text>
+              </view>
+            </view>
+            <!-- 立即支付预定 -->
+            <image wx:if="{{get_status=='工作日'}}" src="../images/hotel/22.png" class="hide_item_right" bindtap="pay1" data-pid="{{item.id}}"  data-hotel="{{title}}"  data-photo="{{item.photo}}"  data-title="{{item.name}}" data-money="{{item.money}}"  data-discount="{{item.zhekou}}" data-ya_money="{{item.ya_money}}"></image>
+            <image wx:else src="../images/hotel/21.png" class="hide_item_right"></image>
+            </view>
+            <!-- 节假日 -->
+            <view class="hide_item">
+            <view class="hide_item_left">
+              <view class="hide_item_type">节假日 > </view>
+              <view class="money">
+                <view class="money-1">
+                  <view style="margin-bottom: -6rpx;">￥</view><view style="font-size:36rpx">{{filters.toFiex(item.jia_money*item.zhekou)}}</view> 
+                </view>
+                <view style="margin-left: 10rpx; display: flex"> 
+                  <view class="money-2">￥{{item.jia_money}}</view>
+                  <view class="money-3" style="margin-left: 18rpx;" wx:if="{{item.jia_money>item.jia_money-(item.jia_money*item.zhekou) && item.zhekou!=1}}"> 优惠{{filters.toFiex(item.jia_money-item.jia_money*item.zhekou)}}元 </view>
+                </view>
+              </view>
+              <view class="p_img" wx:if="{{item.jia_money>item.jia_money-(item.jia_money*item.zhekou) && item.zhekou!=1}}">
+               <image src="/pages/images/hotel/a.png" class="p_img_ico"></image>
+               <text wx:if="{{vip==1}}">普通会员 {{item.zhekou*10}}折</text>
+               <text wx:if="{{vip==2}}">星河会员 {{item.zhekou*10}}折</text>
+               <text wx:if="{{vip==3}}">业主会员 {{item.zhekou*10}}折</text>
+               <text wx:if="{{vip==4}}">星钻卡会员 {{item.zhekou*10}}折</text>
+              </view>
+            </view>
+            <!-- 立即支付预定 -->
+            <image wx:if="{{get_status=='节假日'}}"  src="../images/hotel/22.png" class="hide_item_right" bindtap="pay1" data-pid="{{item.id}}"   data-hotel="{{title}}"  data-photo="{{item.photo}}"  data-title="{{item.name}}" data-money="{{item.jis_money}}" data-discount="{{item.zhekou}}" data-ya_money="{{item.ya_money}}"></image>
+            <image wx:else src="../images/hotel/21.png" class="hide_item_right"></image>
+            </view>
+
+            <!-- 周六日 -->
+            <view class="hide_item">
+            <view class="hide_item_left">
+              <view class="hide_item_type">周六日 > </view>
+              <view class="money">
+                <view class="money-1">
+                  <view style="margin-bottom: -6rpx;">￥</view><view style="font-size:36rpx">{{filters.toFiex(item.week_money*item.zhekou)}}</view> 
+                </view>
+                <view style="margin-left: 10rpx; display: flex"> 
+                  <view class="money-2">￥{{item.week_money}}</view>
+                  <view class="money-3" style="margin-left: 18rpx;"  wx:if="{{item.week_money>item.week_money-(item.week_money*item.zhekou) && item.zhekou!=1}}">优惠{{filters.toFiex(item.week_money*1.00-item.week_money*item.zhekou)}}元 </view>
+                </view>
+              </view>
+              <view class="p_img"  wx:if="{{item.week_money>item.week_money-(item.week_money*item.zhekou) && item.zhekou!=1}}">
+               <image src="/pages/images/hotel/a.png" class="p_img_ico"></image>
+               <text wx:if="{{vip==1}}">普通会员 {{item.zhekou*10}}折</text>
+               <text wx:if="{{vip==2}}">星河会员 {{item.zhekou*10}}折</text>
+               <text wx:if="{{vip==3}}">业主会员 {{item.zhekou*10}}折</text>
+               <text wx:if="{{vip==4}}">星钻卡会员 {{item.zhekou*10}}折</text>
+              </view>
+            </view>
+            <!-- 立即支付预定 -->
+            <image wx:if="{{hideitem.yu}}" src="../images/hotel/22.png" class="hide_item_right" bindtap="pay1" data-old="{{hideitem.oldPrice}}" data-new="{{hideitem.price}}"  data-pid="{{item.id}}"  data-hotel="{{title}}"  data-photo="{{item.photo}}"  data-title="{{item.name}}" data-money="{{item.week_money}}" data-discount="{{item.zhekou}}" data-ya_money="{{item.ya_money}}"></image>
+            <image wx:else src="../images/hotel/21.png" class="hide_item_right"></image>
+            </view>
+
+
+
+
+
+         </view>
+      </view>
+    </view>
+
+    <!-- 酒店概况 -->
+    <view class="hotel-detail">
+      <view class="hotel-detail__title">酒店概况</view>
+      <view class="hotel-detail__con">
+      <view class="con_con">
+        <view class="hotel-detail_item1" wx:for="{{gk}}">
+            <view class="hot-left">
+              <image src="{{item.img}}" class="hot-left_ico"></image>
+              <view style="text-align:center; line-height: 1.2; margin-top: 8rpx;">{{item.tit}}</view>
+            </view>
+            <view class="hot-right">
+              <view wx:for="{{item.gg}}" wx:for-item="g">{{g}}</view>
+            </view>
+        </view>
+
+      </view>
+      </view>
+    </view>
+     <!-- 入住政策 -->
+    <view class="hotel-detail" style="margin-bottom: 32rpx;">
+      <view class="hotel-detail__title " style="border-bottom:4rpx solid #fafafa; padding-bottom: 22rpx">政策与服务</view>
+      <view class="hotel-detail1__con" >
+        <rich-text nodes="{{content}}"></rich-text>
+        <!-- <view> 下午15:00点后办理入住,次日12:00前退房。  </view>
+        <view> 低风险地区客人持健康绿码方可入住。</view> 
+        <view> 中分险地区需持三日内核酸检测方可入住。</view>
+        <view> 业主专享说明: 业主专享价格指每套房间的入住人至少ー人持有本人的实名制业主卡,办理入住时将进行验证。</view>
+        <view> 重要提示:入住酒店所有自驾客人,必须提供车牌号,方可直接进入园区,如打车前往,需在知晓出租车车牌号之后与酒店联系！</view> -->
+        <!-- <view style="height:24rpx"></view> -->
+      </view>
+    </view>
+
+  </view>
+
+<view class="time-box" wx:if="{{time_box}}" bindtap="colbox">
+  <view catchtap="cc" style="width:88%">
+
+  <my-calendar style="width: 88%" 
+  title="选择住店起始时间"
+  useType="range"
+  start="{{start}}"
+  min="{{startDate}}"
+  stop="{{stop}}"
+  bind:confirm="select"
+  background="{{theme.bg}}"
+  fontColor="{{theme.fontColor}}"
+  rangeColor="{{theme.rangeColor}}"
+  touchFontColor="#fff"
+  rangeStartColor="{{theme.rangeStartColor}}"
+  rangeEndColor="{{theme.rangeEndColor}}"
+/>
+</view>
+</view>
+<view class="time-box" wx:if="{{time_box1}}" bindtap="colbox1">
+  <view catchtap="cc" style="width:88%">
+
+  <my-calendar style="width: 88%" 
+  title="选择离店时间"
+  useType="touch"
+  start="{{start1}}"
+  min="{{startDate2}}"
+  touchColor="#FF6D14"
+  touchFontColor="#fff"
+  stop="{{stop}}"
+  date="{{wDate2}}"
+  bind:confirm="select1"
+  background="{{theme.bg}}"
+  fontColor="{{theme.fontColor}}"
+  rangeColor="{{theme.rangeColor}}"
+  rangeStartColor="{{theme.rangeStartColor}}"
+  rangeEndColor="{{theme.rangeEndColor}}"
+/>
+  </view>
+</view>
+ 
+  <map style="height: 472rpx; width:100%"
+          longitude="{{longitude}}"
+          latitude="{{latitude}}"
+          scale="{{scale}}"
+          id="myMap"
+          markers="{{markers}}" hidden="hidden"
+          >
+            <cover-view slot="callout">
+              <cover-view marker-id="1"></cover-view>
+              <cover-view marker-id="2"></cover-view>
+            </cover-view>
+          </map>
+</view>

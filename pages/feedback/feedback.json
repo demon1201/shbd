@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-uploader": "weui-miniprogram/uploader/uploader"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarTitleText": "意见反馈",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,29 @@
+<!--pages/writeOff/writeOff.wxml-->
+
+<view class="page">
+    <view class="w1">
+        <view class="w1-item i1" bindtap="scanCo">
+            <image src="/pages/images/mine/11.png"></image>
+            <view>核销订单</view>
+        </view>
+        <navigator url="/pages/writeOffHistory/writeOffHistory">
+            <view class="w1-item i2">
+                <image src="/pages/images/mine/12.png"></image>
+                <view>核销历史</view>
+            </view>
+        </navigator>
+    </view>
+    <view class="w2" wx:if="{{hexiao}}">
+        <view class="w2-con">
+            <view class="w2-con__detail">
+                <view class="w2-con__dno">订单号：{{hx.transaction_id}}</view>
+                <image src="{{url}}{{hx.photo}}" class="w2-con__img"></image>
+                <view class="w2-con__title">{{hx.title}}</view>
+                <view>规格：{{hx.d_title}}</view>
+                <!-- <view>详细：小菜（3道）+汤（1例）+海鲜（4道）+客家菜（5道）+青菜（2道）+主食（2款）</view> -->
+            </view>
+            <view class="w2-con__btn bt1" bindtap="affirm">确认核销</view>
+            <view class="w2-con__btn bt2" bindtap="cancel">取消</view>
+        </view>
+    </view>
+</view>

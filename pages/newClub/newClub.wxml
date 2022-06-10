@@ -1,0 +1,7 @@
+<!--pages/newClub/newClub.wxml-->
+<view class="main">
+    <image src="{{img}}" class="img" mode="widthFix"></image>
+    <view class="apply" bindtap="applyClub">
+        加入社团
+    </view>
+</view>

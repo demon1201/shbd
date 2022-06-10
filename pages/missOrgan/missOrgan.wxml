@@ -1,0 +1,42 @@
+<!--pages/missOrgan/missOrgan.wxml-->
+<navBar pageName="{{pageName}}"></navBar>
+<view class="main">
+    <image src="/pages/images/club/c6.png" class="top_img"></image>
+    <view class="con" style="top: {{navHeight+24}}px">
+        <view class="title">
+            <image src="/pages/images/club/c2.png" class="title_img"></image>
+            <view class="title_right">
+                <view class="right_r">
+                    <view>
+                        <view class="r1">{{club.name}}</view>
+                        <view class="r2">成员： {{club.num}}人</view>
+                    </view>
+                    <view class="r_wx" bindtap="sWx">
+                        <image src="/pages/images/club/c7.png" class="title_wx_ico"></image>
+                        <text>微信群</text> 
+                    </view>
+                </view>
+                <view class="right_txt">
+                   {{club.intro}}
+                </view>
+                
+            </view>
+        </view>
+        <!--  -->
+        <view class="news__con">
+            <view class="news__item" wx:for="{{news}}">
+                <image src="{{item.img}}" class="item_img"></image>
+                <view class="item_txt">
+                    <view class="item_txt_title">{{item.title}}</view>
+                    <view>{{item.t1}}</view>
+                    <view>活动时间：{{item.ac_time}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="wx" bindtap="cWx" hidden="{{wx?'':'hidden'}}">
+        <image src="{{club.wx_ewm}}" catchtap="ww" class="wx-ewm"></image>
+        <view class="wx_t">长按二维码申请入群</view> 
+    </view>
+</view>

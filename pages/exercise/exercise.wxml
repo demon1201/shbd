@@ -1,0 +1,25 @@
+<!--pages/catering/catering.wxml-->
+<view class="page">
+  <view class="page-top">
+    <image src="/pages/images/6.png" class="page-top__img"></image>
+  </view>
+  <view class="page-con">
+    <view class="page-con__item" wx:for="{{cats}}" bindtap="toCatering" data-idx="{{index}}">
+      <image class="page-con__item_left" src="{{item.img}}" data-idx="{{index}}"></image>
+      <view class="page-con__item_right" data-idx="{{index}}">
+        <view class="page-con__item_title" data-idx="{{index}}">{{item.title}}</view>
+        <view class="page-con__item_star">
+          <view style="display: flex; margin-right:20rpx;" data-idx="{{index}}">
+            <image wx:for="{{5-(5-item.star)}}" data-idx="{{index}}" src="../images/star.png" class="page-con__item_star"></image>
+            <image wx:for="{{5-item.star}}" data-idx="{{index}}" src="../images/star.png" class="page-con__item_star"></image>
+          </view>
+          <view style="display: flex;" data-idx="{{index}}">￥{{item.price}}/人</view>
+        </view>
+        <view data-idx="{{index}}">{{item.type}}</view>
+        <view class="page-con__item_tags" data-idx="{{index}}">
+          <view  wx:for="{{item.tags}}" data-idx="{{index}}" wx:for-item= "tag" wx:for-index="tagindex" class="{{index == 0?'page-con__item_tag page-con__item_tag_first':'page-con__item_tag'}}">{{tag}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

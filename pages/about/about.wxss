@@ -1,0 +1,21 @@
+/* pages/about/about.wxss */
+.title{
+  width: 100%;
+  text-align: center;
+  margin-top:14px;
+  font-size:16px;
+
+
+}
+.img{
+  text-align: center;
+  margin: 20rpx;
+}
+.centent{
+  margin-top:20rpx;
+  width:90%;
+  margin: auto;
+}
+.rich_img{
+  max-width: 100%;
+}

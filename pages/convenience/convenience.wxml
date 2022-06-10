@@ -1,0 +1,40 @@
+<!--pages/convenience/convenience.wxml-->
+<view class="page">
+    <image src="/pages/images/logo1.png" class="logo"></image>
+    <view >信息咨询商家清单</view>
+    <view class="h-title">酒店、住宿类</view>
+    <view class="h-table">
+        <view class="tab1">
+            <view class="c1">名称</view>
+            <view class="c2 cc" style="width: 80rpx;">联系人</view>
+            <view class="c2 cc" style="padding-left:10rpx;width: 135rpx;">联系电话</view>
+            <view class="c4 cc" style="text-align:center;margin-left:0">地址</view>
+            <view class="c5 cc">人均消费</view>
+        </view>
+        <view class="tab2" wx:for="{{hotels}}">
+            <view class="c1">{{item.name}}</view>
+            <view class="c2">{{item.telName}}</view>
+            <view class="c3" bindtap="call" data-tel="{{item.tel}}">{{item.tel}}</view>
+            <view class="c4">{{item.address}}</view>
+            <view class="c5">{{item.price}}元起</view>
+        </view>
+    </view>
+    <!-- 餐饮类  -->
+    <view class="h-title cy">餐饮类</view>
+    <view class="h-table">
+        <view class="tab1">
+            <view class="c1">名称</view>
+            <view class="c2 cc" style="width: 80rpx;">联系人</view>
+            <view class="c2 cc" style="padding-left:10rpx;width: 135rpx;">联系电话</view>
+            <view class="c4 cc" style="text-align:center;margin-left:0">地址</view>
+            <view class="c5 cc">人均消费</view>
+        </view>
+        <view class="tab2" wx:for="{{catering}}">
+            <view class="c1">{{item.name}}</view>
+            <view class="c2">{{item.telName}}</view>
+            <view class="c3" bindtap="call" data-tel="{{item.tel}}">{{item.tel}}</view>
+            <view class="c4">{{item.address}}</view>
+            <view class="c5">{{item.price}}元起</view>
+        </view>
+    </view>
+</view>

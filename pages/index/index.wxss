@@ -1,0 +1,358 @@
+/* index/index.wxss */
+page{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: #eef3f6;
+ font-size: 12px;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #333333;
+
+}
+.index-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eef3f6;
+  width: 100%;
+  margin-bottom: 188rpx;
+}
+.logo{
+  width: 140rpx;
+  height: 140rpx;
+  opacity: 1;
+  position: absolute;
+  top:  0;
+  left: 20rpx;
+  z-index: 1111;
+}
+.top{
+  background: #09754e;
+  width: 100%;
+  position: relative;
+}
+.index-swiper, swiper,.index-swiper__img{
+  width: 100%;
+  height: 567rpx;
+  opacity: 1;
+  position: relative;
+}
+.btnGo {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 0;
+  top: -10%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.index-button{
+  box-sizing: border-box;
+  padding: 24rpx 18rpx 12rpx 18rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  background: #ffffff;
+  position: relative;
+  top: -5rpx;
+  width: 100%;
+}
+.index-btn__item,.index-btn__bg{
+  width: 176rpx;
+  height: 176rpx;
+  position: relative;
+}
+.index-btn__item_box{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.index-btn__item_ico{
+  width: 60rpx;
+  height: 60rpx;
+}
+.index-btn__item_txt{
+  margin-top: -5rpx;
+  
+}
+.index-member{
+  box-sizing: border-box;
+  padding: 28rpx 20rpx 16rpx 20rpx;
+  margin-top: 22rpx;
+  width: 100%;
+  background: #ffffff;
+}
+.title-right{
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: 22rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #999999;
+}
+.title-left{
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #242e33;
+}
+.index-member__title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.title-right>image{
+  width: 12rpx;
+  height: 20rpx;
+  opacity: 1;
+  margin-left: 14rpx;
+}
+.index-member__item{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #fafafa;
+  margin-top: 30rpx;
+}
+.index-member__item>image{
+  width: 100%;
+  height: 304rpx;
+  opacity: 1;
+  background: rgba(0,0,0,0.00);
+  border-radius: 10rpx;
+  margin-bottom: 24rpx;
+}
+.index-member__item_title{
+  font-size: 22rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #111111;
+  /* margin-bottom: 28rpx; */
+  white-space:pre-wrap;
+  width: 186rpx;
+  height: 70rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.index-member__item:last-child{
+  border: none;
+}
+.vip-con{
+  height: 128rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 16rpx;
+  background-color: #fff;
+  position: relative;
+  /* animation: bg 2s infinite linear; */
+}
+.vip{
+  position: relative;
+}
+.vip_img{
+  width: 718rpx;
+  height: 128rpx;
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+  z-index: 111;
+}
+.vip1{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 53rpx;
+  position: relative;
+  z-index: 555;
+  height: 124rpx;
+  justify-content: space-between;
+}
+.vip_ico{
+  width: 28rpx;
+  height: 26rpx;
+}
+.vip_btn{
+  width: 98rpx;
+  height: 36rpx;
+}
+.vip_t1{
+  font-size: 22rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #6a6a6a;
+  margin-right: 10rpx;
+}
+.vip_t2{
+  font-size: 22rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #b1b1b1;
+}
+.vip_t21{
+  color: #ba8d66;
+}
+.vip_31{
+  color: #bb5f5f;
+}
+.vip_32{
+  color: #c58585;
+}
+.xz{
+  width: 122rpx;
+  margin-left: 25rpx;
+}
+.vip_41{
+  color: #C48821 !important;
+}
+.vip_42{
+  color: #DDB26B !important;
+}
+.vip_51{
+  color: white !important;
+}
+.vip_52{
+  color: white !important;
+}
+.vip-bg{
+  width: 100%;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  z-index: 888;
+}
+
+@keyframes bg{
+  0%{
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  50%{
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100%{
+    transform: rotateX(360deg);
+    opacity: 1;
+  }
+}
+.swiper1{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #fff;
+  grid-auto-rows: 200rpx;
+}
+.pp{
+  position: absolute;
+  bottom: 24rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.abc{
+  width: 36rpx;
+  height: 7rpx;
+  opacity: 1;
+  background: #a0c3ca;
+  border-radius: 6rpx;
+  margin-right: 8rpx;
+}
+.abc1{
+  width: 34rpx;
+  height: 4rpx;
+  opacity: 1;
+  border: 1rpx solid #a0c3ca;
+  border-radius: 6rpx;
+  margin-right: 8rpx;
+}
+.d:last-child{
+  margin-right: 0;
+}
+.page-section-spacing{
+  margin-top: 60rpx;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 186rpx;
+  margin-right: 40rpx;
+}
+.scroll-view-item_H:last-child{
+  margin-right: 0;
+}
+
+.sc-item{
+  position: relative;
+}
+.index-member__item_img{
+  width: 186rpx;
+  border-radius: 8rpx;
+  height: 304rpx;
+}
+.hdz{
+  width: 88rpx;
+  height: 36rpx;
+  opacity: 0.8;
+  background: linear-gradient(130deg,#f68c00 9%, #f87351 92%);
+  border-radius: 18rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #ffffff;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll_i{
+  /* display: flex; */
+
+}
+.haibao{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(112,112,112,.3);
+  z-index: 99999;
+  
+}
+.h1{
+  width: 598rpx;
+  height: 746rpx;
+}
+.h2{
+  width: 54rpx;
+  height: 54rpx;
+  opacity: 0.5;
+  border-radius: 50%;
+  margin-top: 65rpx;
+}

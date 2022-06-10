@@ -1,0 +1,234 @@
+/* pages/pages/touping.wxss */
+.page{
+    width: 100%;
+    height: 100%;
+}
+.wimg{
+    width: 100%;
+}
+swiper-item{
+    display: block;
+    height: auto;
+    overflow: none;
+}
+swiper{
+    height: 450rpx;
+}
+swiper-item{
+    position: relative;
+}
+swiper-item view{
+    width: 90rpx;
+    height: 90rpx;
+    background: #777;
+    opacity: 0;
+    border-radius: 40rpx;
+}
+.t11{
+    position: absolute;
+    top: 109rpx;
+    left: 53rpx;
+}
+.t12{
+    position: absolute;
+    top: 276rpx;
+    left: 49rpx;
+}
+.t13{
+    position: absolute;
+    top: 42rpx;
+    left: 488rpx;
+    width: 95rpx;
+    height: 95rpx;
+}
+.t14{
+    position: absolute;
+    top: 133rpx;
+    left: 587rpx;
+}
+.t15{
+    position: absolute;
+    top: 265rpx;
+    left: 585rpx;
+}
+/* 山海运动 */
+.t31{
+    position: absolute;
+    top: 82rpx;
+    left: 52rpx;
+}
+.t32{
+    position: absolute;
+    top: 162rpx;
+    left: 136rpx;
+}
+.t33{
+    position: absolute;
+    top: 252rpx;
+    left: 70rpx;
+}
+.t34{
+    position: absolute;
+    top: 18rpx;
+    left: 476rpx;
+}
+.t35{
+    position: absolute;
+    top: 136rpx;
+    left: 538rpx;
+}
+.t36{
+    position: absolute;
+    top: 276rpx;
+    left: 536rpx;
+}
+.t41{
+    position: absolute;
+    top: 124rpx;
+    left: 55rpx;
+}
+.t42{
+    position: absolute;
+    top: 253rpx;
+    left: 63rpx;
+}
+.t43{
+    position: absolute;
+    top: 40rpx;
+    left: 501rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+.t44{
+    position: absolute;
+    top: 219rpx;
+    left: 530rpx;
+}
+.t51{
+    position: absolute;
+    top: 94rpx;
+    left: 78rpx;
+}
+.t52{
+    position: absolute;
+    top: 233rpx;
+    left: 59rpx;
+}
+.t53{
+    position: absolute;
+    top: 34rpx;
+    left: 519rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+.t54{
+    position: absolute;
+    top: 225rpx;
+    left: 542rpx;
+}
+.t61{
+    position: absolute;
+    top: 125rpx;
+    left: 46rpx;
+}
+.t62{
+    position: absolute;
+    top: 248rpx;
+    left: 100rpx;
+}
+.t63{
+    position: absolute;
+    top: 42rpx;
+    left: 504rpx;
+    width: 95rpx;
+    height: 95rpx;
+}
+.t64{
+    position: absolute;
+    top: 161rpx;
+    left: 539rpx;
+}
+.t65{
+    position: absolute;
+    top: 280rpx;
+    left: 538rpx;
+}
+.t71{
+    position: absolute;
+    top: 106rpx;
+    left: 57rpx;
+}
+.t72{
+    position: absolute;
+    top: 233rpx;
+    left: 114rpx;
+}
+.t73{
+    position: absolute;
+    top: 46rpx;
+    left: 518rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+.t74{
+    position: absolute;
+    top: 256rpx;
+    left: 523rpx;
+}
+.t81{
+    position: absolute;
+    top: 60rpx;
+    left: 163rpx;
+}
+.t82{
+    position: absolute;
+    top: 140rpx;
+    left: 43rpx;
+}
+.t83{
+    position: absolute;
+    top: 240rpx;
+    left: 127rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+.weui-gallery__info{
+    display: none !important;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    right: 25rpx;
+    top: 84rpx;
+}
+.list_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+.item_img{
+    height: 17rpx;
+    margin: 5rpx 0;
+}
+.item_title{
+    color: #6b6969;
+    font-size: 11rpx;
+    margin-left: 11rpx;
+}
+.su{
+    height: 13rpx;
+    width: 1rpx;
+    background-color: #dcdcdc;
+    margin: 4rpx 0;
+    margin-bottom: 0rpx;
+    margin-left: 11rpx;
+}
+.tt1{
+    color: #fff;
+}
+.ri{
+    right: 6rpx;
+}

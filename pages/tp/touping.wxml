@@ -1,0 +1,80 @@
+<!--pages/pages/touping.wxml-->
+<view class="page">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        vertical="{{vertical}}" current="{{scurrent}}" bindchange="change"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block>
+          <swiper-item>
+            <image src="{{background[0]}}" mode="widthFix" class="wimg"></image>
+          </swiper-item>
+          <swiper-item>
+            <image src="{{background[1]}}" mode="widthFix" class="wimg"></image>
+            <view class="t11" data-idx="0" data-type="xh" bindtap="showImg">1</view>
+            <view class="t12" data-idx="1" data-type="xh" bindtap="showImg">2</view>
+            <view class="t13" data-idx="2" data-type="xh" bindtap="showImg">3</view>
+            <view class="t14" data-idx="3" data-type="xh" bindtap="showImg">4</view>
+            <view class="t15" data-idx="4" data-type="xh" bindtap="showImg">5</view>
+          </swiper-item>
+          <swiper-item>
+            <image src="{{background[2]}}" mode="widthFix" class="wimg"></image>
+          </swiper-item>
+          <swiper-item>
+            <image src="{{background[3]}}" mode="widthFix" class="wimg"></image>
+            <view class="t31" data-idx="0" data-type="yd" bindtap="showImg">1</view>
+            <view class="t32" data-idx="1" data-type="yd" bindtap="showImg">2</view>
+            <view class="t33" data-idx="2" data-type="yd" bindtap="showImg">3</view>
+            <view class="t34" data-idx="3" data-type="yd" bindtap="showImg">4</view>
+            <view class="t35" data-idx="4" data-type="yd" bindtap="showImg">5</view>
+            <view class="t36" data-idx="5" data-type="yd" bindtap="showImg">6</view>
+          </swiper-item>
+          <swiper-item>
+            <image src="{{background[4]}}" mode="widthFix" class="wimg"></image>
+            <view class="t41" data-idx="0" data-type="ls" bindtap="showImg">1</view>
+            <view class="t42" data-idx="1" data-type="ls" bindtap="showImg">2</view>
+            <view class="t43" data-idx="2" data-type="ls" bindtap="showImg">3</view>
+            <view class="t44" data-idx="3" data-type="ls" bindtap="showImg">4</view>
+          </swiper-item>
+          <swiper-item>
+            <image src="{{background[5]}}" mode="widthFix" class="wimg"></image>
+            <view class="t51" data-idx="0" data-type="jz" bindtap="showImg">1</view>
+            <view class="t52" data-idx="1" data-type="jz" bindtap="showImg">2</view>
+            <view class="t53" data-idx="2" data-type="jz" bindtap="showImg">3</view>
+            <view class="t54" data-idx="3" data-type="jz" bindtap="showImg">4</view>
+          </swiper-item>
+          <swiper-item>
+            <image src="{{background[6]}}" mode="widthFix" class="wimg"></image>
+            <view class="t61" data-idx="0" data-type="kt" bindtap="showImg">1</view>
+            <view class="t62" data-idx="1" data-type="kt" bindtap="showImg">2</view>
+            <view class="t63" data-idx="2" data-type="kt" bindtap="showImg">3</view>
+            <view class="t64" data-idx="3" data-type="kt" bindtap="showImg">4</view>
+            <view class="t65" data-idx="4" data-type="kt" bindtap="showImg">5</view>
+          </swiper-item>
+          <swiper-item>
+            <image src="{{background[7]}}" mode="widthFix" class="wimg"></image>
+            <view class="t71" data-idx="0" data-type="sy" bindtap="showImg">1</view>
+            <view class="t72" data-idx="1" data-type="sy" bindtap="showImg">2</view>
+            <view class="t73" data-idx="2" data-type="sy" bindtap="showImg">3</view>
+            <view class="t74" data-idx="3" data-type="sy" bindtap="showImg">4</view>
+          </swiper-item>
+          <swiper-item>
+            <image src="{{background[8]}}" mode="widthFix" class="wimg"></image>
+            <view class="t81" data-idx="0" data-type="ty" bindtap="showImg">1</view>
+            <view class="t82" data-idx="1" data-type="ty" bindtap="showImg">2</view>
+            <view class="t83" data-idx="2" data-type="ty" bindtap="showImg">3</view>
+          </swiper-item>
+          <swiper-item>
+            <image src="{{background[9]}}" mode="widthFix" class="wimg"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="list {{scurrent == 9?'ri ':''}}" wx:if="{{scurrent > 1}}">
+          <view class="list_item" wx:for="{{list}}">
+            <image wx:if="{{item.show}}" src="{{item.img}}" class="item_img" mode="heightFix"></image>
+            <view wx:else class="{{scurrent != 9?'item_title ':'item_title tt1'}}" bindtap="change1" data-idx='{{index}}'>{{item.title}}</view>
+            <view class="su"></view>
+          </view>
+      </view>
+    </view>
+    <mp-gallery show="{{show}}" bindchange="change2" bindhide="hide" img-urls="{{imgUrls}}" delete hide-on-click="{{true}}" current="{{current}}"></mp-gallery>
+</view>

@@ -1,0 +1,40 @@
+<!--pages/member/member.wxml-->
+<view class="member-page">
+  <view class="member-page_type">精选类别</view>
+  <view>
+    <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+          <view class="scroll-view-item_H scroll-item" wx:for="{{types}}" bindtap="toActivity" data-idx="{{index}}">
+            <image src="{{url}}{{item.img}}" class="scroll-item_img"  data-idx="{{index}}"></image>
+            <view class="sv-text"  data-idx="{{index}}">{{item.title}}</view>
+          </view>
+    </scroll-view>
+  </view>
+  <!-- 最近的活动 -->
+  <view class="activity">
+    <view class="actt">
+      <view>最近的活动</view>
+     
+        <view class="gdd">
+          <navigator url="/pages/memberActivity/memberActivity">
+          <text class="gd">更多</text>
+          <image src="/pages/images/7.png" alt="" style="width: 10rpx; height: 18rpx; margin-left： 10rpx" />
+        </navigator>
+        </view>
+    </view>
+    <!--  -->
+    <view class="act-item" wx:for="{{acts}}" bindtap=""  bindtap="toActivityDetail" data-id="{{item.id}}">
+      <view class="hdz" wx:if="{{item.zhong}}">活动中</view>
+      <image data-id="{{item.id}}" src="{{url}}{{item.photo}}" mode="aspectFill"></image>
+      <view data-id="{{item.id}}" class="act-item__title">
+        <view data-id="{{item.id}}"class="v-tit">{{item.title}}</view>
+        <view data-id="{{item.id}}" style="margin-left: auto; margin-right:30rpx">
+          <text data-id="{{item.id}}" style="color: #999" wx:if="{{item.duration}}">时长：</text>
+          <text data-id="{{item.id}}">{{item.duration}}</text>
+        </view>
+      </view>
+      <view class="act-tag"  data-id="{{item.id}}">
+        <view data-id="{{item.id}}" class="tag" wx:for="{{item.remark}}" wx:for-item="tag">{{tag}}</view>
+      </view>
+    </view>
+  </view>
+</view>

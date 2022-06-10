@@ -1,0 +1,50 @@
+<!--pages/status/status.wxml-->
+<view class="main">
+    <view class="m1">
+        <text bindtap="show">{{fangxing}}</text>
+        <image bindtap="show" src="/pages/images/mine/f1.png" class="m1-ico"></image>
+        <picker style="margin-left: auto; margin-top: 5rpx; border: 1rpx solid #86b7c1; border-radius: 10rpx; padding: 5rpx 10rpx;" mode="date" value="{{date}}" start="{{start}}" end="2999-09-09" bindchange="bindDateChange">
+            <view class="picker">
+            选择日期:  {{date}}
+            </view>
+        </picker>
+        <view class="m1-bb" wx:if="{{iShow}}">
+            <view bindtap="xuanzhe" data-id="{{item.id}}" data-title="{{item.title}}" wx:for="{{types}}" >{{item.title}}</view>
+        </view>
+    </view>
+    <view class="m2"></view>
+    <view class="m3">
+        <text>筛选：</text>
+        <view class="m3-1 m3-11"  bindtap="shaixuan" data-idx="0">
+            <image wx:if="{{status[0].sta}}" src="/pages/images/mine/f3.png" class="m3-ico"></image>
+            <image wx:else src="/pages/images/mine/f33.png" class="m3-ico"></image>
+            <text>净房</text>
+        </view>
+        <view class="m3-1"  bindtap="shaixuan" data-idx="1">
+            <image wx:if="{{status[1].sta}}" src="/pages/images/mine/f2.png" class="m3-ico"></image>
+            <image wx:else src="/pages/images/mine/f22.png" class="m3-ico"></image>
+            <text>脏房</text>
+        </view>
+        <view class="m3-1" bindtap="shaixuan" data-idx="2">
+            <image wx:if="{{status[2].sta}}" src="/pages/images/mine/f4.png" class="m3-ico"></image>
+            <image wx:else src="/pages/images/mine/f44.png" class="m3-ico"></image>
+            <text>已住</text>
+        </view>
+    </view>
+
+<!-- 房间 -->
+    <view class="m4"  wx:for="{{fs}}">
+    <!-- 楼层 -->
+        <view>
+            <image src="{{item.img}}" class="m4-t"></image>
+        </view>
+        <view class="m4-c">
+            <view class="m4-c1 {{ ff.status == 1?'m4-c1-1':ff.status == 2?'m4-c1-2':'m4-c1-3' }}" wx:for="{{item.f}}" wx:for-item="ff" hidden="{{ff.isShow?'':'hidden'}}">
+                
+                <view class="m4-c2">{{ff.no}}</view>
+                <image src="{{url}}/uploads/shbd/ding.png" style="width:40rpx;height:40rpx;position:absolute" wx:if="{{ff.ding==1}}"></image>
+                <view class="m4-c3">{{ff.type}}</view>
+            </view>
+        </view>
+    </view>
+</view>

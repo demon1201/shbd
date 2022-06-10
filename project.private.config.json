@@ -1,0 +1,63 @@
+{
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/writeOff/writeOff",
+          "pathName": "pages/writeOff/writeOff",
+          "query": "id=1",
+          "scene": 1011
+        },
+        {
+          "name": "pages/negotiation/negotiation",
+          "pathName": "pages/negotiation/negotiation",
+          "query": "data1={\"hotel\":\"星遇酒店\",\"name\":\"测试\",\"phone\":\"15088888888\",\"remark\":\"\",\"money\":\"543.00\",\"photo\":\"/public/uploads/article/20210723/5dc0ce077c6b5de5c4b927fff269807c.jpg\",\"title\":\"大床房\",\"user_dis\":\"0.7\",\"wDate\":\"2022-04-23\",\"wDate2\":\"2022-04-24\",\"days\":\"1\",\"pid\":\"1\",\"user_id\":19811,\"id\":\"1473\"}",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/payForOrder/payForOrder",
+          "pathName": "pages/payForOrder/payForOrder",
+          "query": "data1={\"hotel\":\"星遇酒店\",\"name\":\"ces\",\"phone\":\"14775328320\",\"remark\":\"\",\"money\":\"258.00\",\"photo\":\"/public/uploads/article/20210723/5dc0ce077c6b5de5c4b927fff269807c.jpg\",\"title\":\"大床房\",\"user_dis\":\"0.7\",\"wDate\":\"2021-11-22\",\"wDate2\":\"2021-11-23\",\"days\":\"1\",\"pid\":\"1\",\"user_id\":19811,\"id\":\"385\"}",
+          "scene": null
+        },
+        {
+          "name": "pages/myOrder/myOrder",
+          "pathName": "pages/myOrder/myOrder",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "/pages/negotiation1/negotiation",
+          "pathName": "/pages/negotiation1/negotiation",
+          "query": "id=654",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "/pages/shareCoupon/shareCoupon",
+          "pathName": "/pages/shareCoupon/shareCoupon",
+          "query": "user_id=19811&id=2",
+          "scene": null
+        },
+        {
+          "name": "pages/negotiation1/negotiation",
+          "pathName": "pages/negotiation1/negotiation",
+          "query": "id=450",
+          "scene": null
+        },
+        {
+          "name": "/pages/shareCoupon/shareCoupon",
+          "pathName": "/pages/shareCoupon/shareCoupon",
+          "query": "id=2&user_id=19811",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "projectname": "xhsh",
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+}

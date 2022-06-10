@@ -1,0 +1,45 @@
+<!--pages/payForOrder/payForOrder.wxml-->
+<wxs src="../../utils/subutils.wxs" module="tools" />
+<wxs module="filters" src="../hotel/hot.wxs"></wxs>
+<view class="main">
+    <view class="main-top">
+        <image src="/pages/images/74.png" class="top_bg"></image>
+    </view>
+    <view class="main-con">
+        <view class="zrf-con1">
+        <view class="zrf-pri">代付金额</view>
+        <view class="zrf-price">￥{{filters.toFiex(detail.money*zk)}}元</view>
+        <view class="zrf-time">
+            订单有效截止时间：
+            <view>{{date}}</view>
+           
+        </view>
+      </view>
+      <view class="pay-con__title ref-box" style="">
+      <view class="pay-con__title_show">
+        <view class="pay-con__title_show_left">
+          <view>{{detail.hotel}}</view>
+          <view class="title2">
+            <view style="margin-right: 26rpx">
+              <view class="title2-t1">{{detail.title}}</view>
+              <!-- <view  class="title2-t2">{{room.bed}}</view> -->
+            </view>
+            <view>
+              <view class="title2-t1">入住时间</view>
+              <view class="title2-t2"> {{df_id.start_time}}到{{df_id.end_time}}</view>
+            </view>
+          </view>
+        </view>
+        <image class="pay-con__title_show_right" src="{{url}}{{detail.photo}}"></image>
+      </view>
+      <view class="zrf-con">
+          <view class="zrf-con_txt">住客姓名 <text class="txt1" style="border:none;">{{detail.name}}</text></view>
+          <view class="zrf-con_txt">联系方式 <text class="txt1">{{detail.phone}}</text></view>
+          <view class="zrf-con_txt">备注信息 <text class="txt1">{{detail.remark}}</text></view>
+      </view>
+    </view>
+    </view>
+
+    <view class="{{df_id.df_id==0 && df_id.money_status==0?'liji':'liji1'}}" bindtap="{{df_id.df_id==0 && df_id.money_status==0?'pay':''}}" data-type="0">立即支付</view>
+    <view class="{{df_id.df_id==0 && df_id.money_status==0?'yuefu':'yuefu1'}}" bindtap="{{df_id.df_id==0 && df_id.money_status==0?'pay':''}}" data-type="1">月付支付</view>
+</view>

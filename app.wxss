@@ -1,0 +1,20 @@
+page{
+  background: #fafafa;
+}
+button::after {
+  border: none;
+}
+  
+button {
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  line-height:inherit;
+  font-size: 24rpx;
+}
+button {
+  border-radius:0;
+}
+.weui-gallery__del{
+  display: none !important;
+}

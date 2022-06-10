@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navBar": "/pages/components/navbar/navbar",
+    "my-calendar": "../../My-calendar/my-calendar"
+  }
+}

@@ -1,0 +1,28 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="main">
+    <view class="main-con">
+        <view class="min-con__title">我的反馈</view>
+        <view class="main-con__d">
+            <textarea name="opinion" id="" placeholder="请输入您的反馈意见" model:value="{{opinion}}"></textarea>
+        </view>
+    </view>
+    <view class="main-con">
+        <view class="min-con__title">上传图片：</view>
+        <view class="main-con__d">
+            <mp-cells>
+            <mp-cell>
+                <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5"></mp-uploader>
+            </mp-cell>
+        </mp-cells>
+        </view>
+    </view>
+    <view class="main-con">
+        <view class="min-con__title">联系方式：</view>
+        <view class="main-con__d">
+           <input type="text" placeholder="请输入联系方式" model:value="{{tel}}" />
+        </view>
+    </view>
+    <view class="subtn" bindtap="submit">
+        提交反馈
+    </view>
+</view>

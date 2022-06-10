@@ -1,0 +1,147 @@
+<!--pages/hotel/hotel.wxml-->
+<navBar sorr="{{sorr}}"></navBar>
+<view class="hotel-page">
+<!-- 轮播 -->
+  <view style="height: {{navHeight*2 + 216*2}}rpx;" class="hotel-page__swiper">
+    <swiper indicator-dots="{{false}}" style="height: {{navHeight*2 + 216*2}}rpx;"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperTab'>
+        <block wx:for="{{golf.banner0}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+              <image src="{{url}}{{item}}" class="hotel-swiper__img"  style="height: {{navHeight*2 + 216*2}}rpx;"  mode="aspectFill"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="num_box" style="top: {{navHeight*2 + 133*2}}rpx;">
+        <view class="num"> {{n}} / {{golf.banner0.length}} </view>
+      </view>
+    </view>
+  <!--  -->
+  <view class="hotel-con">
+  <!-- 高尔夫 -->
+    <view class="hotel-con__top">
+      <image src="../images/hotel/1.png" class="top_bg"></image>
+      <view class="top_con">
+        <view class="top_con_title">
+          <view class="title_txt">{{golf.title}}</view>
+          <image src="../images/hotel/star.png" wx:for="{{5}}" class="star"></image>
+          <button open-type="share">
+            <view class="top_fenxiang">
+              <image src="../images/hotel/10.png"></image>
+              <view>分享</view>
+            </view>
+          </button>
+        </view>
+        <!-- tag -->
+        <view class="hotel-tag"> 
+          <view class="hotel-tag_item" wx:for="{{tags}}">{{item}}</view>
+        </view>
+        <!-- 营业时间 -->
+        <view class="openTime"> 
+          <image src="../images/hotel/6.png" class="b12"></image>
+          <view style="font-weight: 700;">开放营业时间：</view>
+          <view>{{golf.start_time}}</view>
+          <!-- <view class="open_ico">
+            <button bindtap="call" style="margin-right: 32rpx;">
+              <image src="../images/hotel/8.png" class="open_ico1"></image>
+            </button>
+            <button  bindtap="toMap">
+              <image src="../images/hotel/7.png" class="open_ico1"></image>
+            </button>
+          </view> -->
+        </view>
+        <view class="addres">
+          <view class="addres11"  bindtap="toMap">
+            <view>地图导航</view>
+            <image src="/pages/images/dd.png" class="add1"></image>
+          </view>
+          <view class="ad1"></view>
+          <view class="addres11"   bindtap="call"  >
+            <view>联系商家</view>
+            <image src="/pages/images/tt.png" class="add1"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="hotel-con__address">
+     
+      <view class="address_item" style=" margin-bottom:20rpx;">
+        <image src="../images/hotel/6.png"></image>
+        <view class="address_item_text">营业时间：{{golf.time}}</view>
+      </view> 
+      <!-- 展示图 -->
+      <view class="address_item_imgs">
+        <image src="{{imgUrls[0]}}"  bindtap="showh" data-idx="{{0}}"></image>
+        <image src="{{imgUrls[1]}}"  bindtap="showh" data-idx="{{1}}"></image>
+        <image src="{{imgUrls[2]}}"  bindtap="showh" data-idx="{{2}}"></image>
+        <mp-gallery show="{{show}}" bindhide="hide" img-urls="{{imgUrls}}" hide-on-click="{{true}}" current="{{current}}"></mp-gallery>
+      </view>
+    </view>
+
+    <!-- 场地预定 -->
+    <view class="hotel-reserve">
+      <view class="con-title">全部场地</view>
+      <view class="to_order" bindtap="toGolfOrder">
+        <image src="/pages/images/gorder.png" class="to_order_img"></image>
+        <view class="ddd">订单</view>
+      </view>
+      <view class="hotel-reserve__item" wx:for="{{golf_lists}}" wx:for-index="idx">
+         <view class="hotel-reserve__item_show">
+         <!--  -->
+          <image src="{{imgUrls1[idx][0]}}" class="show_img" bindtap="showh1" data-idx="{{idx}}"></image>
+          <!--  -->
+
+          <!-- 相册展示 -->
+          <mp-gallery show="{{show1}}" bindhide="hide1" img-urls="{{imgUrls2}}" hide-on-click="{{true}}" current="{{current1}}"></mp-gallery>
+          <view class="show-det">
+            <view class="show-title">{{item.AreaCode}}场</view>
+            <view class="show-title" style="color:#999999">{{item.AreaName}}</view>
+            <view class="money">
+              <view class="money-1">
+                <!-- <view style="margin-bottom: -6rpx;">￥</view><view style="font-size:36rpx">{{item.price}}</view>  -->
+              </view>
+            </view>
+          </view>
+          <!--  -->
+          <view class="reserve__item_right">
+            <image src="../images/hotel/22.png" class="qiang" bindtap="pay" data-AreaCode="{{item.AreaCode}}" data-AreaName="{{item.AreaName}}" data-money="{{item.money}}"></image>
+          </view>
+         </view>
+      </view>
+    </view>
+
+    <!-- 位置 -->
+    <view class="hotel-detail" style="height: 660rpx;">
+      <view class="hotel-detail__title">位置</view>
+      <view class="hotel-detail__con">
+        <view>{{golf.sever_add}}</view>
+        <view class="con-map"  bindtap="toMap"
+        >
+          <map style="height: 472rpx; width:100%"
+          longitude="{{longitude}}"
+          latitude="{{latitude}}"
+          scale="{{scale}}"
+          id="myMap"
+          markers="{{markers}}"
+          >
+            <cover-view slot="callout">
+              <cover-view marker-id="1"></cover-view>
+              <cover-view marker-id="2"></cover-view>
+            </cover-view>
+          </map>
+</view>
+      </view>
+    </view>
+     <!-- 简介 -->
+    <view class="hotel-detail" style="margin-bottom: 32rpx;">
+      <view class="hotel-detail__title " style="border-bottom:4rpx solid #fafafa; padding-bottom: 22rpx">简介</view>
+      <view class="hotel-detail1__con" >
+        <rich-text nodes="{{golf.content}}"></rich-text>
+      </view>
+    </view>
+
+  </view>
+</view>

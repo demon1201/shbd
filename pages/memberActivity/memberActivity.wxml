@@ -1,0 +1,40 @@
+<!--pages/memberActivity/memberActivity.wxml-->
+<view class="activity-page">
+  <view class="act-top">
+    <view class="act-top__item">
+      <view>
+        <picker bindchange="bindPickerChange" style="margin-left: auto;" value="{{type}}" range="{{roles1}}">
+          <view class="picker">
+            {{type}}
+            <image src="/pages/images/d.png" class="picker_ico"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="act-top__item" bindtap="order_time">
+      <view>日期</view>
+      <image class="act-top__item_ico" src="../images/{{time_i}}"></image>
+    </view>
+    <view class="act-top__item" bindtap="order_money">
+      <view>价格</view>
+      <image class="act-top__item_ico" src="../images/{{money_i}}" ></image>
+    </view>
+  </view>
+    <!--  -->
+    <view class="act-con">
+    <view class="act-item" wx:for="{{acts}}" bindtap="toActivityDetail" data-id="{{item.id}}">
+      <view class="hdz" wx:if="{{item.zhong}}">活动中</view>
+      <image  data-id="{{item.id}}" src="{{url}}{{item.photo}}" mode="aspectFill"></image>
+      <view data-id="{{item.id}}"  class="act-item__title" >
+        <view data-id="{{item.id}}" class="v-tit">{{item.title}}</view>
+        <view data-id="{{item.id}}" style="margin-left: auto; margin-right:30rpx">
+          <text data-id="{{item.id}}" style="color: #999">时长：</text>
+          <text data-id="{{item.id}}">{{item.duration}}</text>
+        </view>
+      </view>
+      <view class="act-tag" data-id="{{item.id}}">
+        <view class="tag" data-id="{{item.id}}" wx:for="{{item.remark}}" wx:for-item="tag" style="float:left">{{tag}}</view>
+      </view>
+    </view>       
+  </view>
+</view>

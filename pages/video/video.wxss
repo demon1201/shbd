@@ -1,0 +1,45 @@
+/* pages/video/video.wxss */
+.videoTan{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.videoRel{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.videoAb{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.videoPlay{
+  width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.viBlock{
+  display: block;
+}
+.videoClose{
+  width: 64rpx;
+  height: 64rpx;
+  position: absolute;
+  top: 2%;
+  right: 3%;
+}

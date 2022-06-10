@@ -1,0 +1,43 @@
+<!--pages/myOrder/myOrder.wxml--> 
+<view class="page">
+  <view hidden="{{orders.length>0?'hidden':''}}" class="none-order">当前无订单!</view>
+  <view hidden="{{pay?'hidden':''}}">
+    <!-- <view class="page-top">
+        <view bindtap="classification" class="{{item.act?'page-top__item page-top__item_active':'page-top__item'}}" wx:for="{{types}}" data-idx="{{index}}" wx:key="{{index}}">{{item.title}}</view>
+    </view> -->
+    <view class="page-con">
+      <view class="page-con__item" wx:for="{{orders}}" wx:key="{{item.id}}">
+        <view class="page-con__item_title">
+          <text wx:if="{{item.transaction_id}}">订单号：{{item.transaction_id}}</text>
+          <!-- <text style="margin-left: auto;color: #999999;">{{item.title}}</text> -->
+        </view>
+        <view class="page-con__item_imgt">
+            <!-- <image src="{{item.img}}" class="page-con__item_imgt_left"></image> -->
+            <view class="page-con__item_imgt_right">
+              <view class="item_right_title">{{item.name}}</view>
+            </view>
+            <view>日期：{{item.time}}</view>
+            <view>场次：{{item.title}}</view>
+            <view>人数：{{item.num}}人</view>
+            <view wx:if="{{item.parts}}">人员：<text wx:for="{{item.parts}}" wx:for-item="v">{{v.name}}、</text></view>
+        </view>
+        <view style="height: 100rpx;"></view>
+        <view class="page-con__item_namep">
+          <text>价格</text>
+          <text class="page-con__item_namep_price">￥{{item.money}}/人</text>
+        </view>
+        <view class="page-con__item_namep item-prices">
+          <text class="page-con__item_namep_price">总计：￥{{item.z_money}}</text>
+        </view>
+        <view class="page-con__item_namep item-btn" hidden="{{item.money_status==1?'':'hidden'}}">
+          <view class="cancel" bindtap="openConfirm"  data-id="{{item.id}}">取消订单</view>
+        </view>
+      </view>
+    </view>
+    <mp-dialog title="提示" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}" data-idx="{{item.id}}">
+      <view class="dialog-text">更改取消需提前1天的17点前通知，临时取消收取违约费平日100元/人，假日300元/人。</view>
+    </mp-dialog>
+  </view>
+
+
+</view>

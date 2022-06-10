@@ -1,0 +1,47 @@
+<!--pages/activityDetail/activityDetail.wxml-->
+<navBar sorr="{{sorr}}"></navBar>
+<view class="page">
+  <view class="page-top">
+    <swiper indicator-dots="{{indicatorDots}}" style="height: {{navHeight*2 + 216*2}}rpx;"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperTab'>
+        <block wx:for="{{activity.banner0}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+              <image src="{{url}}{{item}}" class="hotel-swiper__img" mode="aspectFill"  style="height: {{navHeight*2 + 216*2}}rpx;width:100%"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    <!-- <image src="{{url}}{{activity.photo}}" mode="aspectFill"></image> -->
+
+  </view>
+  <view class="page-con">
+    <view>{{activity.title}}</view>
+    <view class="page-con__tags">
+      <view class="page-con__tag" wx:for="{{activity.remark}}">{{item}}</view>
+    </view>
+    <view class="page-con__activity">
+      <view>活动地点：<text class="text"> {{activity.address}}</text></view>
+      <view wx:if="{{activity.num}}">活动人数：<text class="text"> {{activity.num}}人</text></view>
+      <view wx:if="{{activity.money}}"> 活动费用：<text class="text"> {{activity.money}}元/人</text></view>
+      <view wx:if="{{activity.time}}">活动时间：<text class="text"> {{activity.time}}</text></view>
+    </view>
+    <view class="page-con__activity_detail" wx:if="{{activity.content}}">
+      <view class="detail_title text">活动介绍</view>
+      <view>活动名称：<text class="text"> {{activity.title}}</text></view>
+      <view>活动内容：</view>
+      <view class="text">
+        <rich-text nodes="{{content}}"></rich-text>
+      </view>
+    </view>
+    <view class="activity_condition" wx:if="{{activity.tj_content}}">
+      <view class="detail_title text" style="margin-bottom:20rpx">参加者条件</view>
+      <rich-text nodes="{{activity.tj_content}}"></rich-text>
+    </view>
+    <view class="activity_condition1" wx:if="{{activity.td_content}}">
+      <view class="detail_title text" style="margin-bottom:20rpx">退订政策</view>
+      <rich-text nodes="{{activity.td_content}}"></rich-text>
+    </view>
+  </view>
+  <view class="{{activity.zhong?'apply-btn':'apply-btn1'}}" bindtap="{{activity.zhong?'toRegistration':''}}" data-id="{{activity.id}}" data-title="{{activity.title}}" data-money="{{activity.money}}"> 点击报名 </view>
+</view>

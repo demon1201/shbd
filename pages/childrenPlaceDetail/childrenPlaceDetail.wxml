@@ -1,0 +1,97 @@
+<!--pages/hotel/hotel.wxml-->
+<navBar></navBar>
+<view class="hotel-page">
+<!-- 轮播 -->
+  <view style="height: {{navHeight*2 + 216*2}}rpx;" class="hotel-page__swiper">
+    <swiper indicator-dots="{{indicatorDots}}" style="height: {{navHeight*2 + 216*2}}rpx;"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperTab'>
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+              <image src="{{item}}" class="hotel-swiper__img"  style="height: {{navHeight*2 + 216*2}}rpx;"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="num_box" style="top: {{navHeight*2 + 133*2}}rpx;">
+        <view class="num"> {{n}} / {{ns}} </view>
+      </view>
+    </view>
+  <!--  -->
+  <view class="hotel-con">
+  <!-- 乐园 -->
+    <view class="hotel-con__top">
+      <image src="../images/hotel/1.png" class="top_bg"></image>
+      <view class="top_con">
+        <view class="top_con_title">
+          <view class="title_txt">{{title}}</view>
+          <image src="../images/hotel/star.png" wx:for="{{5-(5-star)}}" class="star"></image>
+          <image src="../images/hotel/star.png" wx:for="{{5-star}}" class="star"></image>
+          <view class="top_fenxiang">
+            <image src="../images/hotel/10.png"></image>
+            <view>分享</view>
+          </view>
+        </view>
+        <!-- tag -->
+        <view class="hotel-tag"> 
+          <view class="hotel-tag_item" wx:for="{{tags}}">{{item}}</view>
+        </view>
+        <!-- 营业时间 -->
+        <view class="openTime"> 
+          <view style="font-weight: 700;">营业时间：</view>
+          <view>{{openTime}}</view>
+          <view class="open_ico">
+            <image src="../images/hotel/8.png" class="open_ico1"></image>
+            <image src="../images/hotel/7.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="hotel-con__address">
+      <view class="address_item">
+        <image src="../images/hotel/5.png"></image>
+        <view class="address_item_text">{{address}}</view>
+      </view>
+      <view class="address_item">
+        <image src="../images/hotel/6.png"></image>
+        <view class="address_item_text">联系电话：{{addressTel}}</view>
+      </view>
+      <!-- 展示图 -->
+      <view class="address_item_imgs">
+        <image src="{{item}}" wx:for="{{address_item_imgs}}" wx:key="{{item}}"></image>
+      </view>
+    </view>
+
+    <!-- 类目 -->
+    <view class="hotel-detail">
+      <view class="hotel-detail__title">玩乐项目</view>
+      <view class="hotel-detail__con">
+      <view class="con_con">
+        <view class="hotel-detail_item" wx:for="{{detail_items}}">
+          <image src="{{item.img}}"></image>
+          <view class="detail_item_right">
+            <view>{{item.title}}</view>
+            <view class="tt">{{item.tt}}</view>
+          </view>
+        </view>  
+      </view>
+      </view>
+    </view>
+     <!-- 游玩须知 -->
+    <view class="hotel-detail" style="margin-bottom: 32rpx;height: 566rpx;">
+      <view class="hotel-detail__title " style="border-bottom:4rpx solid #fafafa;">游玩须知</view>
+      <view class="hotel-detail1__con" >
+        <view style="color: #333333; line-height: 22px;font-size:22rpx"> 
+        <view> 为了营造安全，清洁的儿童游乐环境，入场游玩的儿童，以及陪同的家长务必仔细阅读并接受本乐园游玩须知： </view>
+        <view>1 儿童必须在家长的陪同下进入场地，请家长照看好孩子，禁止做任何危险动作，玩滑梯禁止由下往上，下方有人时不可往下滑； </view>
+        <view>2 为了避免交叉感染，严禁患有发热，咳嗽，红眼病，皮肤病，腹泻等未治愈的儿童及家长进入； </view>
+        <view>3 所有进场人员必须脱鞋进入，请不要将食品或饮料，尖硬物品以及能对他人安全与健康造成伤害的危险物品携带入场； </view>
+        <view>4 请维护好场地清洁，请不要随地吐痰，随地大小便，3岁以内的幼儿请在入园前穿好尿不湿；</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

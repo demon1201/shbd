@@ -1,0 +1,66 @@
+<!--pages/activityPay/activityPay.wxml-->
+<navBar></navBar>
+<view class="page">
+  <image src="{{url}}{{photo}}" class="page-title__img"></image>
+
+  <view class="page-con">
+    <view class="page-con-box1">
+      <view class="title">{{res.pid_title}}</view>
+      <view>{{res.title}}</view>
+    </view>
+
+    <view class="page-con-box2">
+      <view class="page-con-box__item">
+        <view>{{selfName}}</view>
+        <view class="price">￥{{res.price}}</view>
+      </view>
+      <view class="hr"></view>
+      <view class="page-con-box__item">
+        <view>总计</view>
+        <view class="price">￥{{prices}}</view>
+      </view>
+    </view>
+    <!-- 参与者信息 -->
+    <view class="page-con-box3">
+      <view class="page-con-box3__title">
+        <view class="box3_title">参与者信息</view>
+        <view wx:if="{{!open}}" class="box3_title_right" bindtap="open">展开
+          <image src="/pages/images/22.png" class="box3_open_ico"></image>
+        </view>
+        <view wx:else class="box3_title_right" bindtap="open">收起
+          <image src="/pages/images/21.png" class="box3_open_ico"></image>
+        </view>
+      </view>
+      <view class="participations" hidden="{{open?'':'hidden'}}">
+        <view wx:for="{{res.parts}}" style="display: flex; align-items: center;">
+        <view>{{item.name}}</view>
+        <view style="margin-left: auto; color: #038c5b;">{{item.num?item.num:1}} * {{item.money}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 备注 -->
+    <view class="page-con-box3" style="padding-bottom:20rpx">
+      <view class="page-con-box3__title">
+        <view class="box3_title">备注：</view>
+      </view>
+      <view class="text" >
+        <textarea name="text" id="" cols="100" rows="10" placeholder="请填写备注" style="height:60rpx;" model:value="{{remark}}"></textarea>
+      </view>
+    </view>
+
+    <!-- 备注 -->
+    <view class="page-con-box3" style="padding-bottom:80rpx;padding-right: 30rpx;">
+      <view class="page-con-box3__title" style="height:85rpx">
+        <view class="box3_title">退订政策</view>
+        <!-- <image src="../images/12.png" class="bz_ico"></image> -->
+      </view>
+      <view class="text">
+        关于活动的参加者要求与退订政策，点击下一步则表示接受 <text style="color:#038C5B;">《退订政策》</text>
+      </view>
+    </view>
+
+    <view class="next" bindtap="{{pay}}" wx:if="{{prices!=0}}">下一步</view>
+    <view class="next" bindtap="{{m_pay}}" wx:else>下一步</view>
+  </view>
+</view>

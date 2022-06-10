@@ -1,0 +1,75 @@
+<!--pages/club/club.wxml-->
+<view class="main">
+    <view class="my_c">
+        <view class="title">
+            <image src="/pages/images/club/c1.png" class="title_img"></image>
+            <text>我的社团</text>
+            <view class="title_search">
+                <mp-searchbar bindselectresult="selectResult" search="{{search1}}"></mp-searchbar>
+            </view>
+        </view>
+        <view class="items {{m1?'it':''}}">
+            <view class="item" wx:for="{{myc}}" bindtap="toMyc" data-idx="{{index}}">
+                <image src="{{item.img}}" class="item_img"></image>
+                <view class="item_txt"> 
+                    {{item.title}}
+                </view>
+            </view>
+        </view>
+        <view class="more" bindtap="more1" wx:if="{{!m1}}">
+            <image src="/pages/images/9.png" class="more_ico"></image>
+        </view>
+    </view>
+    <!--  -->
+    <view class="more_c">
+        <view class="title">
+            <image src="/pages/images/club/c3.png" class="title_img"></image>
+            <text>加入新的社团</text>
+            <view class="title_search">
+                <mp-searchbar bindselectresult="selectResult" search="{{search2}}"></mp-searchbar>
+            </view>
+        </view>
+        <view class="items1">
+            <view class="item" wx:for="{{newc}}" bindtap="toNewc" data-idx="{{index}}">
+                <image src="{{item.img}}" class="item_img"></image>
+                <view class="item_txt"> 
+                    {{item.title}}
+                </view>
+            </view>
+        </view>
+        <view class="more" bindtap="more2">
+            更多
+        </view>
+    </view>
+    <!--  -->
+    <view class="activity_c">
+        <view class="title"  style="margin-bottom: 0;">
+            <image src="/pages/images/club/c4.png" class="title_img"></image>
+            <text>社团活动</text>
+            <view class="title_search">
+                <mp-searchbar bindselectresult="selectResult" search="{{search3}}"></mp-searchbar>
+            </view>
+        </view>
+        <view class="acti__con">
+            <view class="acti__item" wx:for="{{news}}">
+                <view class="acti__title"> 
+                    <image src="{{item.timg}}" class="acti__title_timg"></image>
+                    <view class="acti__title_right">
+                        <view class="">{{item.c_name}}</view>
+                        <text>{{item.date}} {{item.time}}</text>
+                    </view>
+                </view>
+                <image src="/pages/images/club/c5.png" class="acti__item_img"></image>
+                <view class="acti_txt">
+                    <view class="acti_t1">{{item.title}}</view>
+                    <view>{{item.title1}}</view>
+                    <view>活动时间：{{item.acti_time}}</view>
+                </view>
+                <view class="ac_hr" wx:if="{{index+1 < news.length}}"></view>
+            </view>
+            <view class="more" style="margin-top: 20rpx">
+                更多
+            </view>
+        </view>
+    </view>
+</view>

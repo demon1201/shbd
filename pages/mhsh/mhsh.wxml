@@ -1,0 +1,51 @@
+<!--pages/mhsh/mhsh.wxml-->
+<view class="main">
+    <image src="https://pt.zerom.cn/uploads/shbd/mhsh/21.png" class="top-img"></image>
+    <view class="cont">
+        <image src="https://pt.zerom.cn/uploads/shbd/mhsh/1.png" class="img2"></image>
+        <image src="https://pt.zerom.cn/uploads/shbd/mhsh/11.png" class="img_title img3 "></image>
+        <view class="cont__txt">
+            <view>山海半岛美好生活馆——深圳东滨海区域首个，整合项目自有资源、巽寮资源及物业资源，致力于打造专属山海半岛的美好生活服务体验中心，营造专属的美好生活方式。目前，主要为您提供星遇酒店、食野山房、烧烤场、开心农场、运动场等自营配套的预约服务，巽寮湾：吃、喝、玩、乐的咨询服务和最新鲜、最及时的旅游资讯。</view>
+            <view>未来，随着星河山海半岛9200亩大规划配套的逐步落实，美好生活馆作为社区运营服务中心，将持续为业主提供更全面丰富的生活定制服务。</view>
+        </view>
+        <image src="https://pt.zerom.cn/uploads/shbd/mhsh/12.png" class="img_title img4"></image>
+        <view class="cont__items">
+            <view>
+                <view class="cont__item" wx:for="{{yewu}}">
+                    <view class="item__title">{{item.title}}</view>
+                    <image src="{{item.img}}" class="item__img" mode="aspectFill"></image>
+                    <view class="item__txt">
+                        {{item.pos}}
+                    </view>
+                    <view class="hr"></view>
+                    <navigator class="nav" url="{{item.link}}">
+                        查看详情 >
+                    </navigator>
+                </view>
+            </view>
+            <view style="margin-left: auto;">
+                <view class="cont__item" wx:for="{{yewu2}}">
+                    <view class="item__title">{{item.title}}</view>
+                    <image src="{{item.img}}" class="item__img" mode="aspectFill"></image>
+                    <view class="item__txt">
+                        {{item.pos}}
+                    </view>
+                    <view class="hr"></view>
+                    <navigator class="nav" url="{{item.link}}">
+                        查看详情 >
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <image src="https://pt.zerom.cn/uploads/shbd/mhsh/13.png" class="img_title img5"></image>
+
+        <view class="cont__items">
+            <view class="cont__item2" wx:for="{{gongl}}">
+                <view class="item2_title">{{item.title}}</view>
+                <navigator url="{{item.link}}" class="item2_img">
+                    <image src="{{item.img}}" class="item2_img"></image>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

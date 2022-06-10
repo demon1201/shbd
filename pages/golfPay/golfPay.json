@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "TEE TIME",
+  "usingComponents": {
+    "calendar": "plugin://calendar/calendar"
+  }
+}

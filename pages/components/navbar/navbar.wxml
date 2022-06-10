@@ -1,0 +1,12 @@
+<!--components/navbar/navbar.wxml-->
+<view class="gu-a__head {{sorr?'sorr':''}}" style="height:{{navH}}px">
+  <view class="nav"  style="top:{{navTop}}px">
+    <view class="back-btn">
+      <view class="gu-a__back">
+        <mp-icon icon="back"  bindtap="navBack" color="white" size="{{12}}" wx:if="{{!share1}}"></mp-icon>
+        <mp-icon icon="home"  bindtap="toHome" color="white" size="{{22}}" wx:else></mp-icon>
+      </view>
+    </view>
+    <view class="gu-a__title">{{pageName}}</view>
+  </view>
+  </view>

@@ -1,0 +1,488 @@
+/* pages/hotel/hotel.wxss */
+.hotel-page{
+  background: #fafafa;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+}
+.hotel-page__swiper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.hotel-swiper__img{
+  width: 100%;
+}
+.hotel-con{
+  z-index: 999;
+  margin-top: -108rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hotel-con__top{
+  width: 710rpx;
+  height: 260rpx;
+  background: rgb(255, 255, 255, .2);
+  background: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.04); 
+  position: relative;
+  
+}
+.top_bg{
+  width: 710rpx;
+  height: 260rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.top_con{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 32rpx 46rpx 34rpx 22rpx;
+  width: 100%;
+}
+.star{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 10rpx;
+}
+.top_con_title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10rpx;
+  margin-left: 14rpx;
+  
+}
+.top_fenxiang{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10rpx;
+}
+.top_fenxiang>image{
+  width: 28rpx;
+  height: 28rpx;
+}
+.top_fenxiang>view{
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #333333;
+}
+.title_txt{
+  font-size: 18px;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #111111;
+  margin-right: 30rpx;
+}
+.hotel-tag{
+  display: flex;
+  margin-left: 14rpx;
+}
+.hotel-tag_item{
+  box-sizing: border-box;
+  padding: 0 16rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  opacity: 1;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  margin-right: 16rpx;
+  color: #666666;
+}
+.open_ico{
+  display: flex;
+  margin-left: auto;
+}
+.open_ico>image{
+  width: 56rpx;
+  height: 56rpx;
+}
+.openTime{
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: 34rpx;
+}
+.open_ico1{
+  margin-right: 32rpx;
+}
+.num{
+  width: 84rpx;
+  height: 38rpx;
+  background: rgba(0,0,0,.4);
+  border-radius: 10px;
+  text-align: center;
+  line-height: 38rpx;
+  margin: 0 auto;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+.num_box{
+  position: absolute;
+  width: 100%;
+}
+.hotel-con__address{
+  margin-top: 30rpx;
+  width: 710rpx;
+  height: 302rpx;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  padding: 34rpx 32rpx;
+}
+.address_item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.address_item>image{
+  width: 16rpx;
+  height: 18rpx;
+}
+.address_item_text{
+  font-size: 20rpx;
+  margin-left: 12rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #666666;
+}
+.address_item_imgs{
+  display: flex;
+  justify-content: space-around;
+}
+.address_item_imgs>image{
+  width: 204rpx;
+  height: 136rpx;
+  opacity: 1;
+  background: rgba(0,0,0,0.00);
+  border-radius: 8rpx;
+}
+.hotel-in-item{
+  margin-top: 30rpx;
+  width: 100%;
+  height: 108rpx;
+  opacity: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+}
+.in-item{
+  height: 68rpx;
+  opacity: 1;
+  background: #f5f5f5;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 24rpx;
+}
+.item-date{
+  font-size: 18px;
+  font-family: DIN, DIN-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #3a3a3a;
+  margin-right: 20rpx;
+}
+.item-text{
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #999999;
+}
+.item-ts{
+  height: 36rpx;
+  opacity: 1;
+  border: 1px solid #707070;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  line-height: 36rpx;
+  margin-left: 42rpx;
+  display: flex;
+  align-items: center;
+}
+.in-item_next{
+  width: 12rpx;
+  height: 20rpx;
+  margin-left: auto;
+  margin-right: 34rpx;
+}
+.hotel-reserve{
+  width: 714rpx;
+  opacity: 1;
+  background: #ffffff;
+  margin-top: 20rpx;
+}
+.hotel-reserve__item{
+  box-sizing: border-box;
+  padding: 0 24rpx;
+}
+.hotel-reserve__item_show{
+  display: flex;
+  height: 206rpx;
+  flex-direction: row;
+  align-items: center;
+}
+.show_img{
+  width: 218rpx;
+  height: 158rpx;
+  opacity: 1;
+  background: rgba(0,0,0,0.00);
+  border-radius: 8rpx;
+}
+
+.show-title{
+  font-size: 12px;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #111111;
+}
+.show-title1{
+  font-size: 10px;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #999999;
+}
+.show-det{
+  display: flex;
+  flex-direction: column;
+  height: 158rpx;
+  margin-left: 28rpx;
+}
+.money{
+  display: flex;
+  position: relative;
+  margin-top: 26rpx;
+  align-items: flex-end;
+}
+.money-1{
+  display: flex;
+  color: rgba(255,80,80,1);
+  font-size: 20rpx;
+  font-family: OPPOSans, OPPOSans-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #ff5050;
+  display: flex;
+  line-height: 42rpx;
+  align-items: flex-end;
+}
+.money-2{
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-decoration:  line-through;
+  text-align: left;
+  color: #999999;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 5rpx;
+}
+
+.money-3{
+  height: 30rpx;
+  line-height: 30rpx;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  opacity: 1;
+  background: #ff7700;
+  border-radius: 8px 8px 8px 0px;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+}
+.qiang{
+  width: 88rpx;
+  height: 102rpx;
+  opacity: 1;
+  
+}
+.reserve__item_right{
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  align-items: center;
+}
+.oico{
+  width: 20rpx;
+  height: 12rpx;
+  margin-left: 6rpx;
+}
+.gd{
+  display: flex;
+  align-items: center;
+  margin-top: 22rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #999999;
+}
+.hotel-reserve__item_hide{
+  opacity: 1;
+  background: #fafafa;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin-bottom: 30rpx;
+}
+.hide_item{
+  height: 206rpx;
+  opacity: 1;
+  background: #fafafa;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: flex;
+  align-items: center;
+  border-bottom: 4rpx solid #f0f0f0;
+  margin-bottom: 20rpx;
+}
+.hide_item_left{
+  display: flex;
+  flex-direction: column;
+}
+.hide_item_right{
+  width: 86rpx;
+  height: 92rpx;
+  opacity: 1;
+  margin-left: auto;
+}
+.hide_item:last-child{
+  border: none;
+}
+.vip{
+  width: 110rpx;
+  height: 34rpx;
+  opacity: 1;
+  margin-top: 8rpx;
+}
+.hide_item_type{
+  font-size: 14px;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #111111;
+}
+.hide{
+  display: none;
+}
+.hotel-detail{
+  width: 710rpx;
+  height: 652rpx;
+  opacity: 1;
+  background: #ffffff;
+  box-sizing: border-box;
+  margin-top: 18rpx;
+  border-radius: 16rpx;
+}
+.hotel-detail__title{
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: rgba(0,0,0,0.90);
+  box-sizing: border-box;
+  padding-left: 24rpx;
+}
+.hotel-detail__con{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.con_con{
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 4rpx solid #f5f5f5;
+  width: 686rpx;
+  box-sizing: border-box;
+  padding-top: 24rpx;
+}
+.hotel-detail_item{
+  width: 343rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #111111;
+  margin-bottom: 58rpx;
+}
+.hotel-detail_item:nth-child(5){
+  margin-right: 0;
+}
+.hotel-detail_item>image{
+  width: 140rpx;
+  height: 100rpx;
+  opacity: 1;
+  background: rgba(0,0,0,0.00);
+  border-radius: 8rpx;
+}
+.liaoj{
+  font-size: 12px;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(0,0,0,0.90);
+}
+.in-detail{
+  margin-top: 30rpx;
+}
+.hotel-detail1__con{
+  margin-top: 24rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #333333;
+  line-height: 44rpx;
+  box-sizing: border-box;
+  padding: 0 28rpx;
+}
+.tt{
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #999999;
+}
+.detail_item_right{
+  margin-left: 26rpx;
+  height: 100rpx;
+}

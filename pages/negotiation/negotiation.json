@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#96C3CA",
+  "navigationBarTitleText": "核销订单",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "navBar": "/pages/components/navbar/navbar"
+  }
+  
+}

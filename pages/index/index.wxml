@@ -1,0 +1,137 @@
+<!--index/index.wxml-->
+<view class="index-page">
+<!-- 头部 -->
+  <!-- <view style="height: {{navHeight*2 + 13*2}}rpx" class="top">
+    <image class="logo" src="{{logo}}"></image>
+  </view> -->
+  <!-- 轮播 -->
+  <view class="index-swiper" style="z-index:999">
+    <!-- <image class="logo" src="{{logo}}" style="top:{{navTop+15}}rpx"></image> -->
+      <swiper  indicator-dots="{{false}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <swiper-item wx:for="{{background}}" wx:for-item="v" wx:key="key">
+          <!-- <image src="{{url}}/{{v.images}}" class="slide-image" mode="scaleToFill" bindtap="{{v.video!=null?'openVideo':'img'}}"  data-del='true' data-url="{{v.video}}"/> -->
+          <image src="{{url}}/{{v.images}}" class="index-swiper__img" mode="scaleToFill" bindtap="click{{v.type}}" data-del='true' data-video="{{v.video}}" data-url="{{v.link_url}}" />
+          <!-- 播放按钮 -->
+          <view class="playBtn" wx:if="{{v.type==1}}">
+            <image src="../images/play3.png" class="btnGo" bindtap="click{{v.type}}" data-del='true' data-video="{{v.video}}" data-url="{{v.link_url}}"></image>
+          </view>
+         
+        </swiper-item>
+     
+      </swiper>
+  </view>
+  <!-- vip -->
+  <view style="width: 100%;z-index: 888">
+  <view style="background-color: #fff;">
+    <view class="vip-con">
+      <!-- <image src="/pages/images/11.png" class="vip-bg"></image> -->
+    <view class="vip" wx:if="{{vip==1}}" bindtap="{{is_sq==1?'toVip':'login'}}">
+      <image src="/pages/images/v1.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v11.png" class="vip_ico"></image>
+        <text class="vip_t1">普通会员</text>
+        <text class="vip_t2">升级银海湾星钻卡，享受更多权益！</text>
+        <image src="/pages/images/vip/v111.png" class="vip_btn"></image>
+      </view>
+    </view>
+    <view class="vip" wx:if="{{vip==2}}" bindtap="{{is_sq==1?'toVip':'login'}}">
+      <image src="/pages/images/v2.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v22.png" class="vip_ico"></image>
+        <text class="vip_t1 vip_t21">星河会员</text>
+        <text class="vip_t2 vip_t21">升级银海湾星钻卡，享受更多权益！</text>
+        <image src="/pages/images/vip/v222.png" class="vip_btn"></image>
+      </view>
+    </view>
+    <view class="vip" wx:if="{{vip==3}}" bindtap="{{is_sq==1?'toVip':'login'}}">
+      <image src="/pages/images/v3.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v33.png" class="vip_ico"></image>
+        <text class="vip_t1 vip_31">业主</text>
+        <text class="vip_t2 vip_32">升级银海湾星钻卡，享受更多权益！</text>
+        <image src="/pages/images/vip/v333.png" class="vip_btn"></image>
+      </view>
+    </view>
+    <view class="vip" wx:if="{{vip==4}}" bindtap="{{is_sq==1?'toVip':'login'}}">
+      <image src="/pages/images/v4.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v44.png" class="vip_ico"></image>
+        <text class="vip_t1 vip_41">银海湾星钻卡</text>
+        <text class="vip_t2 vip_42">尊敬的银海湾星钻会员！</text>
+        <image src="/pages/images/vip/v444.png" class="vip_btn xz" ></image>
+      </view>
+    </view>
+
+   
+    <view class="vip" wx:if="{{vip==5}}" bindtap="{{is_sq==1?'toVip':'login'}}">
+      <image src="/pages/images/v5.png" class="vip_img"></image>
+      <view class="vip1">
+        <image src="/pages/images/vip/v55.png" class="vip_ico"></image>
+        <text class="vip_t1 vip_51">星河控股员工</text>
+        <text class="vip_t2 vip_52">升级银海湾星钻卡</text>
+        <image src="/pages/images/vip/v555.png" class="vip_btn xz" ></image>
+      </view>
+    </view>
+  </view>
+</view>
+  </view>
+  <!-- 选项轮播 -->
+  <view class="index-swiper" style="z-index:999; height: 420rpx;">
+      <swiper style=" height: 420rpx;"  indicator-dots="{{false}}" bindchange="change1" current="{{current}}"
+        autoplay="{{!autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <!-- bb表示多少页 -->
+        <swiper-item wx:for="{{bb}}" wx:for-item="v" wx:for-index="idx" wx:key="key" class="swiper1">
+        <!-- 每页取下标所属 -->
+          <button class="index-btn__item"  wx:for="{{classify[idx]}}" data-idx="{{index}}" data-idex="{{idx}}" data-id="{{item.id}}" wx:key="{{item.title}}" bindtap="{{is_sq==1?'toLink':'login'}}">
+            <image src="../images/index/b.png" class="index-btn__bg"  data-idx="{{index}}" ></image>
+            <view class="index-btn__item_box"  data-idx="{{index}}" >
+              <image src="{{url}}{{item.img}}" class="index-btn__item_ico"  data-idx="{{index}}" ></image>
+              <view class="index-btn__item_txt"  data-idx="{{index}}" >{{item.title}}</view>
+            </view>
+          </button>
+        </swiper-item>
+        
+      </swiper>
+      <view  class="pp">
+          <view class="{{current == index?'abc':'abc1'}} d" wx:for="{{classify.length}}" data-idx="{{index}}" bindtap="change11"></view>
+        </view>
+  </view>
+
+  <!-- 会员活动 -->
+  <view class="index-member">
+    <view class="index-member__title">
+      <view class="title-left">会员活动</view>
+      <navigator url="/pages/memberActivity/memberActivity">
+        <view class="title-right">
+          <view>更多</view> 
+          <image src="../images/7.png"></image>
+        </view>
+      </navigator>
+    </view>
+    <!-- 活动 -->
+    <view class=""> 
+      <scroll-view class="scroll-view_H scroll_i" scroll-x="true" bindscroll="scroll">
+          <view id="demo{{index}}" class="scroll-view-item_H sc-item" wx:for="{{activities}}" wx:key= "{{item.id}}"  data-id="{{item.id}}" bindtap="toActivityDetail" wx:key="index">
+            <image class="index-member__item_img" src="{{url}}{{item.index_photo}}"  data-id="{{item.id}}" mode="aspectFill"></image>
+            <view class="index-member__item_title"  data-id="{{item.id}}">{{item.title}}</view>
+            <view class="hdz" wx:if="{{item.zhong}}">活动中</view>
+            <view class="hdz" style="padding: 0 5rpx; background: linear-gradient(130deg,#d0ccc7 9%, #b8b2b1 92%);" wx:else>已结束</view>
+          </view>
+      </scroll-view>
+    </view>
+    <!-- <view class="index-member__item" wx:for="{{activities}}" wx:key= "{{item.id}}"  data-id="{{item.id}}" bindtap="toActivityDetail" wx:key="index">
+      <image src="{{url}}{{item.photo}}"  data-id="{{item.id}}" mode="aspectFill"></image>
+      <view class="index-member__item_title"  data-id="{{item.id}}">{{item.title}}</view>
+    </view> -->
+  </view>
+  
+</view>
+
+<!-- 弹窗海报 -->
+<!-- <view wx:if="{{vip!=4}}" style="z-index:999;position: relative;">
+  <view class="haibao" wx:if="{{close}}">
+    <image src="/pages/images/hb.png" class="h1" bindtap="{{is_sq==1?'toVip':'login'}}"></image>
+    <image src="/pages/images/cc.png" class="h2" bindtap="coloseHaibao"></image>
+  </view>
+</view> -->

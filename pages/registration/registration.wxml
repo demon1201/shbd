@@ -1,0 +1,47 @@
+<!--pages/registration/registration.wxml-->
+<view class="page">
+  <view class="page-calendar">
+    <!-- <calendar 
+   weeks-type="cn"
+   days-color="{{dayStyle}}"
+   binddayClick="dayClick"
+   start-date="{{startDate}}"
+   end-date="{{endDate}}"
+/> -->
+
+<my-calendar style="width: 88%" 
+  title="选择离店时间"
+  useType="touch"
+  start="{{start1}}"
+  actives="{{actives}}"
+  min="{{startDate2}}"
+  touchColor="#86B7C1"
+  touchFontColor="#fff"
+  stop="{{stop}}"
+  date="{{chushidate}}"
+  bind:confirm="select1"
+  background="{{theme.bg}}"
+  fontColor="{{theme.fontColor}}"
+  rangeColor="{{theme.rangeColor}}"
+  rangeStartColor="{{theme.rangeStartColor}}"
+  rangeEndColor="{{theme.rangeEndColor}}"
+/>
+  </view>
+  <view class="page-date">
+    <view>有以下时段可以选择</view>
+    <view wx:if="{{lists.length!=0}}">
+      <view class="page-date__item"  wx:for="{{lists}}"  bindtap="{{status==1?'toApply':''}}" data-pid="{{item.id}}" data-title="{{item.title}}" data-num="{{item.num}}" data-money="{{money}}">
+        <view  data-idx="{{index}}">{{item.title}}</view>
+        <view wx:if="{{status!=1}}" style="margin-left: 49%;">已过期</view>
+        <view  data-idx="{{index}}" style="color:#038c5b; margin-left: auto; margin-right: 14rpx;">余{{item.num}}
+          <image  data-idx="{{index}}" src="/pages/images/7.png" class="item_next"></image>
+        </view>
+      </view>
+    </view>
+
+    
+    <view wx:else style="margin:40rpx;text-align:center"> {{err_msg}} </view>
+
+  </view>
+</view>
+

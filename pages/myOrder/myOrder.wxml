@@ -1,0 +1,77 @@
+<!--pages/myOrder/myOrder.wxml--> 
+<view class="page">
+  <view hidden="{{orders.length>0?'hidden':''}}" class="none-order">当前无订单!</view>
+  <view hidden="{{pay?'hidden':''}}">
+    <!-- <view class="page-top">
+        <view bindtap="classification" class="{{item.act?'page-top__item page-top__item_active':'page-top__item'}}" wx:for="{{types}}" data-idx="{{index}}" wx:key="{{index}}">{{item.title}}</view>
+    </view> -->
+    <view class="page-con">
+      <view class="page-con__item" wx:for="{{orders}}" wx:key="{{item.id}}">
+        <view class="page-con__item_title">
+          <text>订单号：{{item.transaction_id?item.transaction_id:'无'}}</text>
+          <text style="margin-left: auto;color: #999999;">{{item.payTime}}</text>
+        </view>
+        <view class="page-con__item_imgt">
+            <!-- <image src="{{item.img}}" class="page-con__item_imgt_left"></image> -->
+            <view class="page-con__item_imgt_right">
+              <view class="item_right_title">{{item.title}}</view>
+              
+              <view class="yqx" wx:if="{{item.transaction_id && item.money_status==2}}" style="color:#999999">已取消</view>
+              <view class="yqx" wx:elif="{{item.money_status==0}}" style="color:red">未支付</view>
+              <view class="yqx" wx:elif="{{item.dq==1}}" style="color:red">订单到期</view>
+
+
+            </view>
+            <view>{{item.start_time}}(入住)-{{item.end_time}}(离店) 共{{item.days}}晚</view>
+            <view wx:if="{{item.status==0}}">未入住</view>
+            <view wx:elif="{{item.status==1}}">已入住</view>
+            <view wx:else>已离店</view>
+            <view>房间号：{{item.fj}}</view>
+            <view wx:if="{{item.password}}" style="color:red">房间密码：{{item.password}}</view>
+            
+            <!-- <view>人员：<text wx:for="{{item.names}}" wx:for-item="name">{{name}}、</text></view> -->
+        </view>
+        <!-- <view wx:if="{{item.transaction_id}}">
+          <view class="page-con__item_namep" style=" height: 70rpx; font-weight: 700;">
+            <text>早餐券抵用券</text>
+            <text class="page-con__item_namep_price" style="color: #333; ">入住时间：{{item.start_time}}</text>
+          </view>
+          <view class="page-con__item_namep zcq" >
+            <image src="{{item.pid == 1||item.pid == 2?'/pages/images/zc1.png':'/pages/images/zc2.png'}}" class="quan"></image>
+            <view class="zc-text">
+              <view class="zc1 {{item.pid == 1||item.pid == 2?'zc1-b':'zc1-g'}}">{{item.title}}</view>
+              <view class="zc2 {{item.pid == 1||item.pid == 2?'zc2-b':'zc2-g'}}">早餐时间为8:00-9:00，在早餐供应时间出示本页面即可用餐。</view>
+              <view class="zc3 {{item.pid == 1||item.pid == 2?'zc3-b':'zc3-g'}}">有效期至：{{item.end_time}}</view>
+            </view>
+        </view>
+      </view> -->
+
+        <view class="page-con__item_namep" style="margin-top: 20rpx;">
+          <text>房费</text>
+          <text class="page-con__item_namep_price" style="color: #333;">￥{{item.money}}元</text>
+        </view>
+        <view class="page-con__item_namep">
+          <text>押金</text>
+          <text class="page-con__item_namep_price" style="color: #333;">￥{{item.ya_money}}元</text>
+        </view>
+        <view class="page-con__item_namep">
+          <text style="opacity: 0;">总计</text>
+          <text class="page-con__item_namep_price">总计：￥{{item.sum}}元</text>
+        </view>
+        <!-- <view class="page-con__item_namep item-prices">
+          <text class="page-con__item_namep_price">总计：￥{{item.prices}}</text>
+        </view> -->
+        
+        <view class="page-con__item_namep item-btn" wx:if="{{item.type==1}}" hidden="{{item.money_status!=2?'':'hidden'}}">
+          <view class="cancel" bindtap="openConfirm" data-id="{{item.id}}">取消订单</view>
+        </view>
+      </view>
+    </view>
+    <mp-dialog title="提示" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}" data-idx="{{item.id}}">
+      <view class="dialog-text">订单确认后50分钟内可免费取消修改，若未入住或过时取消修改将收取您全额房费。平台会根据您的付款
+方式扣除房费，订单需等酒店或供应商确认后生效，订单确认结果以平台app通知为准，如订单不确认将全额退款至您的付款账户。</view>
+    </mp-dialog>
+  </view>
+
+
+</view>

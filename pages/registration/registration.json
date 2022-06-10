@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "趣浪六一·FUN飞山海半岛",
+  "usingComponents": {
+    "calendar": "plugin://calendar/calendar",
+    "my-calendar": "../../My-calendar2/my-calendar"
+  }
+}

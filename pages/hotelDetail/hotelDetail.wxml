@@ -1,0 +1,49 @@
+<!--pages/hotelDetail/hotelDetail.wxml-->
+<view class="detail">
+  <view class="detail-time">
+    <view>入住时间</view>
+    <view class="detail-tiem">14:00之后</view>
+    <view style="margin-left:144rpx">离店时间</view>
+    <view class="detail-tiem">14:00之前</view>
+  </view>
+  <!--  -->
+  <view class="detail-d1">
+    <view class="d1-title">
+      入住与退房时间
+    </view>
+    <view class="d1-text">
+      <rich-text nodes="{{time_content}}"></rich-text>
+      <!-- <view>
+        酒店于入住当日12点开始办理入住，如提前到店，酒店视当前客房情况决定是否为您提前办理入住 
+      </view>
+      <view>
+        在线完成支付的订单我们将为您保留房间至入住日第二天12:00 
+      </view>
+      <view>
+        到店支付订单若在入住当日21:00未办理入住，酒店有权视情况取消您的预订 
+      </view>
+      <view>
+        退房时间为离店当日14:00
+      </view> -->
+    </view>
+  </view>
+  <view class="detail-d1" style="height:300rpx;margin-top: 20rpx;">
+    <view class="d1-title"> 餐饮 </view>
+    <view class="d1-text" style="height:210rpx">
+      <rich-text nodes="{{food_content}}"></rich-text>
+      <!-- <view>
+        平日早餐时间为07:00-10:30
+      </view>
+      <view>
+        节假日早餐时间为07:00-11:00
+      </view>
+      <view>
+        每张元气早餐券可供最多2人享用早餐 
+      </view>
+      <view>
+        单独购买早餐¥48.0/位，请联系酒店工作人员购买。
+      </view> -->
+    </view>
+  </view>
+
+</view>

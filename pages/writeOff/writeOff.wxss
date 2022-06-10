@@ -1,0 +1,120 @@
+/* pages/writeOff/writeOff.wxss */
+.w1{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 888;
+}
+.w1-item{
+    width: 362rpx;
+    height: 200rpx;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 44rpx 0;
+    justify-content: space-between;
+    font-size: 30rpx;
+}
+.i1{
+    background-color: #07744d;
+    color: #fff;
+    border-radius: 20rpx;
+    margin-bottom: 80rpx;
+}
+.i1>image{
+    width: 54rpx;
+    height: 56rpx;
+}
+
+.i2{
+    background-color: #e9b231;
+    color: #fff;
+    border-radius: 20rpx;
+}
+.i2>image{
+    width: 46rpx;
+    height: 58rpx;
+}
+.w2{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.w2-con{
+    width: 620rpx;
+    opacity: 1;
+    font-size: 22rpx;
+    font-family: PingFang SC, PingFang SC-Regular;
+    font-weight: 400;
+    text-align: left;
+    color: #333333;
+}
+.w2-con__detail{
+    width: 100%;
+    background: #ffffff;
+    border-radius: 24rpx;
+    box-sizing: border-box;
+    padding: 56rpx 50rpx;
+}
+.w2-con__dno{
+    font-size: 22rpx;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50rpx;
+}
+.w2-con__img{
+    width: 100%;
+    height: 348rpx;
+    border-radius: 10rpx;
+    margin-bottom: 70rpx;
+}
+.w2-con__title{
+    font-size: 28rpx;
+    font-family: PingFang SC, PingFang SC-Bold;
+    font-weight: 700;
+    text-align: left;
+    color: #111111;
+    margin-bottom: 8rpx;
+}
+.w2-con__btn{
+    width: 620rpx;
+    height: 80rpx;
+    opacity: 1;
+    font-size: 24rpx;
+    font-family: PingFang SC, PingFang SC-Bold;
+    font-weight: 700;
+    text-align: left;
+    color: #ffffff;
+    border-radius: 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bt1{
+    background: #038c5b;
+    color: #fff;
+    margin-top: 108rpx;
+    margin-bottom: 26rpx;
+}
+.bt2{
+    background: #828282;
+    color: #fff;
+}

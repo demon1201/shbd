@@ -1,0 +1,14 @@
+<!--pages/shareCoupon/shareCoupon.wxml-->
+<view class="page">
+    <view class="page-cont">
+        <view>
+            <image src="{{coupon.headimgurl}}" class="tx"></image>
+        </view>
+        <view class="t1">来自 <text class="name"> {{coupon.nickname}} </text> 的优惠券</view>
+        <view class="t2">
+            <image src="{{url}}{{coupon.photo2}}" class="img"></image>
+            <view>使用有效期至：{{coupon.end_time}}</view>
+        </view>
+        <view class="t3" bindtap="getCoupon">领取优惠券</view>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+<!--pages/myOrder/myOrder.wxml--> 
+<view class="page">
+  <view hidden="{{orders.length>0?'hidden':''}}" class="none-order">当前无订单!</view>
+  <view hidden="{{pay?'hidden':''}}">
+    <!-- <view class="page-top">
+        <view bindtap="classification" class="{{item.act?'page-top__item page-top__item_active':'page-top__item'}}" wx:for="{{types}}" data-idx="{{index}}" wx:key="{{index}}">{{item.title}}</view>
+    </view> -->
+    <view class="page-con">
+      <view class="page-con__item" wx:for="{{orders}}" wx:key="{{item.id}}">
+        <view class="page-con__item_title">
+          <text>订单号：{{item.RegisterNumber}}</text>
+          <text style="margin-left: auto;color: #999999;">{{item.payTime}}</text>
+        </view>
+        <view class="page-con__item_imgt">
+            <!-- <image src="{{item.img}}" class="page-con__item_imgt_left"></image> -->
+            <view class="page-con__item_imgt_right">
+              <view class="item_right_title">{{item.title}}</view>
+            </view>
+            <view>人数：{{item.PlayNum}}</view>
+            <view>身份：{{item.GuestIdentifyOld}}</view>
+            <view>预订日期：{{item.PlayDate}}</view>
+            <view>场次：{{item.Changci}}</view>
+            <view>开始时间：{{item.TeeTime}}</view>
+
+            <!-- <view>支付时间：{{item.time}}</view> -->
+            
+            <!-- <view>人员：<text wx:for="{{item.names}}" wx:for-item="name">{{name}}、</text></view> -->
+        </view>
+        <!-- <view class="page-con__item_namep">
+          <text>价格</text>
+          <text class="page-con__item_namep_price">{{price}}元/人</text>
+        </view> -->
+        <!-- <view class="page-con__item_namep item-prices">
+          <text class="page-con__item_namep_price">总计：￥{{item.prices}}</text>
+        </view> -->
+        <view class="page-con__item_namep item-btn">
+          <!-- <view>总计：￥{{item.money}}</view> -->
+          <!-- <view class="cancel" bindtap="openConfirm" data-id="{{item.id}}" data-PlayDate="{{item.PlayDate}}" data-OrderNumber="{{item.OrderNumber}}">取消订单</view> -->
+        </view>
+      </view>
+    </view>
+    <mp-dialog title="提示" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}" data-idx="{{item.id}}">
+      <view class="dialog-text">
+        <view>1.更改取消需提前1天17点前,17点后取消场地预定金将不给予退还，场地预定金平日100元/人,假日300元/人。</view>
+        <view>2.场地预定金将于现场消费后自动扣取。</view>
+        </view>
+    </mp-dialog>
+  </view>
+
+
+</view>

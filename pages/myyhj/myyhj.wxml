@@ -1,0 +1,23 @@
+<!--pages/yhj/yhj.wxml-->
+<view class="page">
+    <view class="yhq-cont">
+    <block wx:for="{{coupon}}">
+        <view class="yhq-item"  data-idx="{{index}}">
+            <view class="item">
+                <view class="yhq-left">
+                    <image src="{{url}}{{item.photo}}" class="y-img"></image>
+                    <view class="left-item">
+                        <view style="height: 125rpx;display: flex;  align-items: center;"><text class="zk">{{item.zhekou*10}}</text> <text style="margin-top: 25rpx; margin-left: 5rpx;">折</text> </view>
+                        <!-- <view class="left-t1">剩余 {{item.num}}张</view> -->
+                    </view>
+                </view>
+                <view class="yhq-right">
+                    <view class="right-t1">除会员活动，其余项目均可使用。</view>
+                    <view>使用有效期至：{{item.end_time}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+    </view>
+
+</view>

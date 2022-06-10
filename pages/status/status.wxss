@@ -1,0 +1,121 @@
+/* pages/status/status.wxss */
+.main{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 40rpx;
+}
+.m1{
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 24rpx;
+    font-size: 24rpx;
+    font-family: PingFang SC, PingFang SC-Regular;
+    font-weight: 400;
+    text-align: right;
+    position: relative;
+}
+.m1-bb{
+    position: absolute;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    top: 44rpx;
+    left: 0;
+    text-align: left;
+    border-radius: 10rpx;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px 0px #d1edf3;
+}
+.m1-bb>view{
+    border-bottom: 1rpx solid #d1edf3;
+    height: 65rpx;
+    display: flex;
+    align-items: center;
+    padding-left: 20rpx;
+}
+.m1-bb>view:last-child{
+    border-bottom: none;
+}
+.m1-ico{
+    width: 16rpx;
+    height: 8rpx;
+    margin-left: 10rpx;
+}
+.m2{
+    width: 96rpx;
+    height: 6rpx;
+    border-radius: 20rpx;
+    background-color: #86b7c1;
+    margin-top: 14rpx;
+    margin-left: 2rpx;
+}
+.m3{
+    display: flex;
+    align-items: center;
+    margin-top: 34rpx;
+    font-size: 24rpx;
+    font-family: PingFang SC, PingFang SC-Regular;
+    font-weight: 400;
+    text-align: right;
+}
+.m3-1{
+    display: flex;
+    align-items: center;
+    margin-right: 46rpx;
+}
+.m3-11{
+    margin-left: 30rpx;
+}
+.m3-ico{
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 12rpx;
+}
+.m4{
+    margin-top: 40rpx;
+}
+.m4-t{
+    width: 98rpx;
+    height: 38rpx;
+}
+.m4-c{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20rpx 18rpx;
+    grid-auto-rows: 146rpx;
+    margin-top: 18rpx;
+}
+.m4-c1{
+    box-sizing: border-box;
+    padding: 10rpx 16rpx;
+    border-radius: 16rpx;
+}
+
+.m4-c1-1{
+    background: #6abe83;
+}
+.m4-c1-2{
+    background: #b9b9b9;
+}
+.m4-c1-3{
+    background: #0075c9;
+}
+
+
+.m4-c2{
+    font-size: 28rpx;
+    font-family: PingFang SC, PingFang SC-Bold;
+    font-weight: 700;
+    text-align: left;
+    color: #ffffff;
+}
+.m4-c3{
+    font-size: 24rpx;
+    font-family: PingFang SC, PingFang SC-Regular;
+    font-weight: 400;
+    text-align: left;
+    color: #ffffff;
+    margin-top: 40rpx;
+}

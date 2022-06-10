@@ -1,0 +1,10 @@
+var filters = {
+  toFiex: function(value){
+    return value.toFixed(2)
+  } 
+}
+
+
+module.exports = {
+  toFiex : filters.toFiex
+}

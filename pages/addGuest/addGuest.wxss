@@ -1,0 +1,104 @@
+/* pages/addGuest/addGuest.wxss */
+.page-bottom-btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84rpx;
+  opacity: 1;
+  background: linear-gradient(132deg,#86B7C1 5%, #86B7C1);
+  border-radius: 16rpx 16rpx 0px 0px;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+}
+.add-guest{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.add-guest__title{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 40rpx 0 30rpx 0;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #111111;
+}
+.add-guest__item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 40rpx;
+  padding-right: 66rpx;
+  height: 94rpx;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #999999;
+  margin-bottom: 16rpx;
+}
+.add-guest__item_ico{
+  width: 32rpx;
+  height: 32rpx;
+  opacity: 1;
+  margin-right: 32rpx;
+}
+.add-guest__item_self{
+  color: #111;
+}
+.pay-box{
+  width: 100%;
+  height: 176rpx;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  padding: 30rpx 40rpx; 
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #111111;
+}
+.order-title{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.hr{
+  height: 2rpx;
+  opacity: 1;
+  border-bottom: 2rpx solid #efefef;
+  margin-top: 38rpx;
+  margin-bottom: 18rpx;
+}
+.sum{
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: right;
+  color: #333333;
+}
+.box11{
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #333333;
+  padding: 30rpx 30rpx
+}

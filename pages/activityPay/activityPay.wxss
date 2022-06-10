@@ -1,0 +1,137 @@
+/* pages/activityPay/activityPay.wxss */
+.page{
+  height: 100%;
+  width: 100%;
+  font-size: 12px;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #111111;
+}
+.page-title__img{
+  width: 100%;
+  height: 478rpx;
+  opacity: 1;
+  background: rgba(0,0,0,0.00);
+}
+.page-con{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 20rpx;
+}
+.title{
+  font-size: 14px;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+.page-con-box1{
+  width: 100%;
+  height: 150rpx;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  padding: 30rpx 24rpx;
+}
+.page-con-box2{
+  width: 100%;
+  height: 186rpx;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 16rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  padding: 30rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page-con-box__item{
+  display: flex;
+  align-items: center;
+}
+.price{
+  margin-left: auto;
+  color: #038c5b;
+}
+.hr{
+  width: 100%;
+  height: 2rpx;
+  opacity: 1;
+  border: 2rpx solid #f5f5f5;
+}
+.page-con-box3{
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0rpx 24rpx;
+  padding-right: 40rpx;
+  margin-top: 30rpx;
+  padding-bottom: 10rpx;
+}
+.page-con-box3__title{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+}
+.box3_open_ico{
+  width: 14rpx;
+  height: 14rpx;
+  opacity: 1;
+}
+.box3_title{
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #111111;
+}
+.box3_title_right{
+  margin-left: auto;
+  color: #038c5b;
+}
+.participations{
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  padding-top: 0;
+  color: #bababa;
+}
+.participations>view{
+  margin-bottom: 5rpx;
+}
+.text{
+  font-size: 12px;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #999999;
+}
+.bz_ico{
+  width: 28rpx;
+  height: 28rpx;
+  opacity: 1;
+  background: #038c5b;
+  border-radius: 50%;
+  margin-left: auto;
+}
+.next{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 24rpx;
+  opacity: 1;
+  background: linear-gradient(132deg,#86B7C1 5%, #86B7C1);
+  border-radius: 16rpx 16rpx 0px 0px;
+}

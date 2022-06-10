@@ -1,0 +1,14 @@
+<!--pages/family/family.wxml-->
+<view class="page">
+    <view class="cont">
+        <view class="cont-item" wx:for="{{lists}}" data-id="{{item.id}}" bindtap="toDetail">
+            <view class="item-left">
+                <view>{{item.date}}</view>
+                <view class="t2">{{item.year}}</view>
+            </view>
+            <view class="item-right">
+                {{item.title}}
+            </view>
+        </view>
+    </view>
+</view>

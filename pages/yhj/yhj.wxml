@@ -1,0 +1,27 @@
+<!--pages/yhj/yhj.wxml-->
+<view class="page">
+    <view class="yhq-cont">
+    <block wx:for="{{coupon}}">
+        <view class="yhq-item {{item.check?'yhq-active':''}}" bindtap="check" data-idx="{{index}}" data-id="{{item.id}}">
+            <view class="item">
+                <view class="yhq-left">
+                    <image src="{{url}}{{item.photo}}" class="y-img"></image>
+                    <view class="left-item">
+                        <view style="height: 125rpx;"><text class="zk">{{item.zhekou*10}}</text> 折</view>
+                        <view class="left-t1">剩余 {{item.num}}张</view>
+                    </view>
+                </view>
+                <view class="yhq-right">
+                    <view class="right-t1">除会员活动，其余项目均可使用。</view>
+                    <view>每次分享优惠券数量都会减少</view>
+                </view>
+            </view>
+        </view>
+    </block>
+    </view>
+
+    <button open-type="share" class="send">
+        赠送优惠券
+    </button>
+
+</view>

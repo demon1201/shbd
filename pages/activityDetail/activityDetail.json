@@ -1,0 +1,11 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationStyle": "custom",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "会员活动",
+  "usingComponents": {
+    "navBar": "/pages/components/navbar/navbar"
+  }
+  
+}

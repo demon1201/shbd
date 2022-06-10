@@ -1,0 +1,11 @@
+<!--pages/video/video.wxml-->
+<!-- 视频弹窗 -->
+<view class="videoTan">
+  <view class="videoRel">
+    <view class="videoAb">
+      <view class="videoRel">
+        <video class="videoPlay" src="{{video}}" autoplay="true"></video>
+      </view>
+    </view>
+  </view>
+</view>

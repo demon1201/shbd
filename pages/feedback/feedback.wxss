@@ -1,0 +1,58 @@
+/* pages/feedback/feedback.wxss */
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 64rpx 40rpx;
+}
+.main-con{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin-bottom: 40rpx;
+}
+.min-con__title{
+    margin-left: 20rpx;
+    font-size: 28rpx;
+    font-family: PingFang SC, PingFang SC-Bold;
+    font-weight: 700;
+    text-align: left;
+    color: #111111;
+}
+.main-con__d{
+    background-color: #fff;
+    padding: 20rpx;
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    font-family: PingFang SC, PingFang SC-Regular;
+    font-weight: 400;
+    text-align: left;
+    color: #999999;
+    border-radius: 16rpx;
+}
+.main-con__d>textarea{
+    height: 200rpx;
+    width: 100%;
+}
+
+.subtn{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 84rpx;
+    line-height: 84rpx;
+    opacity: 1;
+    background: linear-gradient(132deg,#86B7C1 5%, #86B7C1);
+    border-top-left-radius: 16rpx;
+    border-top-right-radius: 16rpx;
+    font-size: 24rpx;
+    font-family: PingFang SC, PingFang SC-Regular;
+    font-weight: 400;
+    text-align: center;
+    color: #ffffff;
+
+}

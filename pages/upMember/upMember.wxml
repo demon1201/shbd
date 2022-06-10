@@ -1,0 +1,297 @@
+<!--pages/upMember/upMember.wxml-->
+<navBar></navBar>
+<view>
+    <image src="{{app_url}}uploads/shbd/vb.png" class="vip-bg"></image>
+    <view class="main" bindtap="colose">
+        <image src="/pages/images/vip/logo.png" class="logo"></image>
+        <!-- 普通会员 -->
+        <view class="member-card" wx:if="{{vip == 1}}">
+            <image src="{{app_url}}uploads/shbd/m1.png"  class="card-bg"></image>
+            <view class="card-con">
+            <view class="member-title">
+                <image src="{{headimgurl}}" class="member-img"></image>
+                <view style="width:330rpx;">
+                    <view class="member__t1">
+                        <text>{{nickname}}</text>
+                        <image src="/pages/images/vip/m11.png" class="member_pt"></image>
+                    </view>
+                    <text>升级银海湾星钻卡会员，享受更多权益！</text>
+                </view>
+            </view>
+            <text class="wqy">暂无权益，赶紧去升级吧！</text>
+            </view>
+        </view>
+        <!-- 星河会员 -->
+        <view class="member-card" wx:if="{{vip == 2}}">
+            <image src="{{app_url}}uploads/shbd/m2.png"  class="card-bg"></image>
+            <view class="card-con">
+                <view class="member-title">
+                    <image src="{{headimgurl}}" class="member-img"></image>
+                    <view style="width:330rpx;">
+                        <view class="member__t1 m2_t1">
+                            <text>{{nickname}}</text>
+                            <image src="/pages/images/vip/m22.png" class="member_pt"></image>
+                        </view>
+                        <text class="m2_txt">升级银海湾星钻卡会员，享受更多权益！</text>
+                    </view>
+                </view>
+                <view class="m_qy">
+                    <view class="m_item"> 
+                        <image src="/pages/images/vip/m2_1.png"></image>
+                        <view class="m_su"></view>
+                        <view>餐饮配套<text>8折</text></view>
+                    </view>      
+                    <view class="m_item"> 
+                        <image src="/pages/images/vip/m2_2.png"></image>
+                        <view class="m_su"></view>
+                        <view>度假娱乐<text>9折</text></view>
+                    </view>      
+                    <view class="m_item"> 
+                        <image src="/pages/images/vip/m2_3.png"></image>
+                        <view class="m_su"></view>
+                        <view>生态田园<text>7折</text></view>
+                    </view>      
+                    <view class="m_item"> 
+                        <image src="/pages/images/vip/m2_4.png"></image>
+                        <view class="m_su"></view>
+                        <view>运动健康<text>9折</text></view>
+                    </view>      
+                </view>
+            </view>
+        </view>
+        <!-- 业主会员 -->
+        <view class="member-card" wx:if="{{vip == 3}}">
+            <image src="{{app_url}}uploads/shbd/m3.png"  class="card-bg"></image>
+            <view class="card-con">
+                <view class="member-title">
+                    <image src="{{headimgurl}}" class="member-img"></image>
+                    <view style="width:330rpx;">
+                        <view class="member__t1 m2_t1">
+                            <text>{{nickname}}</text>
+                            <image src="/pages/images/vip/m33.png" class="member_pt"></image>
+                        </view>
+                        <text class="m3_txt">升级银海湾星钻卡会员，享受更多权益！</text>
+                    </view>
+                </view>
+                <view class="m_qy">
+                    <view class="m_item m3_item"> 
+                        <image src="/pages/images/vip/m3_1.png"></image>
+                        <view class="m_su m3_su"></view>
+                        <view>餐饮配套<text>7折</text></view>
+                    </view>      
+                    <view class="m_item m3_item"> 
+                        <image src="/pages/images/vip/m3_2.png"></image>
+                        <view class="m_su m3_su"></view>
+                        <view>度假娱乐<text>7折</text></view>
+                    </view>      
+                    <view class="m_item m3_item"> 
+                        <image src="/pages/images/vip/m3_3.png"></image>
+                        <view class="m_su m3_su"></view>
+                        <view>生态田园<text>6折</text></view>
+                    </view>      
+                    <view class="m_item m3_item"> 
+                        <image src="/pages/images/vip/m3_4.png"></image>
+                        <view class="m_su m3_su"></view>
+                        <view>运动健康<text>7折</text></view>
+                    </view>      
+                </view>
+            </view>
+        </view>
+        <!-- 银海湾星钻卡 -->
+        <view class="member-card" wx:if="{{vip == 4}}">
+            <image src="{{app_url}}uploads/shbd/m4.png"  class="card-bg"></image>
+            <view class="card-con">
+                <view class="member-title">
+                    <image src="{{headimgurl}}" class="member-img"></image>
+                    <view style="width:330rpx;">
+                        <view class="member__t1 m4_t1">
+                            <text>{{nickname}}</text>
+                            <image src="/pages/images/vip/m44.png" class="member_pt" style="width:144rpx;height:36rpx;"></image>
+                        </view>
+                        <text class="m4_txt">尊敬的银海湾星钻卡会员！</text>
+                    </view>
+                </view>
+               <view class="m4_con" >
+                  
+                    <view class="m4_xzj">
+                        星钻金:5000
+                    </view>
+               </view>
+               <image class="xz" src="/pages/images/vip/m444.png"></image>
+               <text class="xz_txt">恭喜你，已升级为银海湾星钻卡会员!</text>
+            </view>
+        </view>
+        <!--  -->
+        <view class="qy" catchtap="oo">
+            <image src="{{app_url}}uploads/shbd/vb1.png" class="qy-bg"></image>
+            <view class="qy__con">
+                <view class="qy__btn {{to?'to_vip':''}}" style="{{vip==4?'background: none;box-shadow:none':''}}">
+                <view class="qy_btn" hidden="{{vip==4?'hidden':''}}" catchtap="{{!to?'shengji':'up_box'}}">
+                    <image src="/pages/images/vip/v44.png" class="qy__btn_ico"></image>
+                    <text class="qy__btn_txt" >升级银海湾星钻卡会员</text>
+                </view>
+                </view>
+                <view wx:if="{{!to}}">
+                    <text class="qy__sj" wx:if="{{vip != 4 }}">升级银海湾星钻卡会员，享以下权益</text>
+                    <text class="qy__sj" wx:else>银海湾星钻卡会员，享以下权益</text>
+                </view>
+                <view class="qy__au"  wx:if="{{!to}}">
+                    <view class="qy__au_item">
+                        <image src="/pages/images/vip/mm1.png" alt="" class="au_img"></image>
+                        <view class="item1">
+                            <view class="item_title">餐饮配套</view>
+                            <view >  <view class="item_left"></view> 烧烤场 <text>7折</text></view>
+                            <view > <view class="item_left"></view> 食野山房<text>7折</text></view>
+                            <view > <view class="item_left"></view> 食野山房<text>7折</text></view>
+                        </view>
+                    </view>
+                    <view class="qy__au_item">
+                        <image src="/pages/images/vip/mm3.png" alt="" class="au_img"></image>
+                        <view class="item1">
+                            <view class="item_title">度假娱乐</view>
+                            <view >  <view class="item_left"></view>星遇酒店 <text>7折</text></view>
+                        </view>
+                    </view>
+                    <view class="qy__au_item">
+                        <image src="/pages/images/vip/mm4.png" alt="" class="au_img"></image>
+                        <view class="item1">
+                            <view class="item_title">生态田园</view>
+                            <view >  <view class="item_left"></view>开心农场<text>6折</text></view>
+                        </view>
+                    </view>
+                    <view class="qy__au_item">
+                        <image src="/pages/images/vip/mm5.png" alt="" class="au_img"></image>
+                        <view class="item1">
+                            <view class="item_title">运动健康</view>
+                            <view >  <view class="item_left"></view>中央公园</view>
+                            <view style="padding-left:18rpx;">运动场地<text>7折</text></view>
+                        </view>
+                    </view>
+                    <view class="qy__au_item">
+                        <image src="/pages/images/vip/mm2.png" alt="" class="au_img"></image>
+                        <view class="item1">
+                            <view class="item_title">购房礼包</view>
+                            <view ><view class="item_left"></view>根据营销节点</view>
+                            <view  style="padding-left:18rpx; width: 220rpx;">阶段性出台购房礼包</view>
+                        </view>
+                    </view>
+
+                    <view class="th" bindtap="tuihuan" wx:if="{{vip==4}}">
+                        退还星钻金
+                    </view>
+                </view>
+                <view catchtap="oo" class="zc-form {{to?'zc-form1':''}}" wx:else  >
+                <view class="zc_title">注册会员资料</view>
+                <view class="zc_item">
+                    <view>会员姓名：</view>
+                    <view class="zc_input"><input type="text" placeholder="请输入姓名" model:value="{{name}}"></input></view>
+                </view>
+                <view class="zc_item">
+                    <view>联系方式：</view>
+                    <view class="zc_input"><input type="text" placeholder="请输入手机号" model:value="{{tel}}"></input></view>
+                </view>
+                <view class="zc_item">
+                    <view>证件号码：</view>
+                    <view class="zc_input"><input type="text" placeholder="请输入证件号码" model:value="{{idCard}}"></input></view>
+                </view>
+
+                <view class="ty">
+                    <view class="ty1" wx:if="{{!agree}}"></view>
+                    <image class="ty11" wx:else src="/pages/images/vip/xy.png"></image>
+                    <view class="ty2">请认真阅读以下条款：</view>
+                    <view class="ty3" bindtap="agreeXy">《星钻卡业主权益体验卡协议书》</view>
+                </view>
+            </view>
+            </view>
+        </view>
+       
+    </view>
+
+    <view class="up_box bo11" wx:if="{{tk}}">
+        <view class="box box1  {{xy?'up_box1':''}}" style="height: 500rpx; width:568rpx">
+            <text class="box_t1">退款说明</text>
+            <view class="box_t2" style="width:474rpx">
+                <view>
+                    1、从10月1日起，可手动申请选择退还5000元；
+                </view>
+                <view>
+                    2、如未手动申请退还，将在10月15日前系统自动退还至个人账户。
+                </view>
+            </view>
+            <view class="box_btn123" >
+                <view class="box_b1" bindtap="qx1" st>取消</view>
+                <view class="box_b2" bindtap="tapDialogButton" style="clor:#606060">确认退款</view>
+            </view>
+        </view>
+    </view>
+    <view class="up_box" wx:if="{{xy1}}">
+        <view class="box  {{xy?'up_box1':''}}">
+            <text class="box_t1">星钻卡业主权益体验卡协议书</text>
+            <scroll-view scroll-y="true" style="height:90%" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="box_t2">
+                <view class="tt2">
+                    <view class="bxt1">请认真阅读以下条款：</view>
+                    <view class="bxt2">依据《中华人民共和国合同法》及相关法规，双方本着自愿、平等及互惠互利的原则，经友好协商，您向星河银海湾项目申请体验业主权益事宜达成一致，特签订本协议，以兹共同遵守。</view>
+                </view>
+                <view class="tt2">
+                    <view class="bxt1">第一条 双方声明及保证</view>
+                    <view class="bxt2">1、甲方为惠州星河协达房地产有限公司，是在中华人民共和国正式注册成立，有独立签署本合同并承担相应民事责任的企业法人。 </view>
+                    <view class="bxt2">2、乙方保证有签署和执行本合同一切条款的权利及行为能力。</view>
+                </view>
+                <view class="tt2">
+                    <view class="bxt1">第二条 星钻卡说明</view>
+                    <view class="bxt2">1、双方达成交易的条件为：乙方需在山海半岛小程序支付人民币5000元整（伍仟圆整）的星钻卡押金。 </view>
+                    <view class="bxt2">2、卡主权益：凭此星钻卡在星河山海半岛项目内合作商家消费时可按业主权益享受优惠折扣，优惠折扣最终解释权归星河山海半岛项目所有。</view>
+                </view>
+                <view class="tt2">
+                    <view class="bxt1">第三条 甲方的权利与义务</view>
+                    <view class="bxt2">1、甲方为乙方提供相关服务内容。 </view>
+                    <view class="bxt2">2、甲方如发现乙方有违反协议规定或有不正当的使用行为，甲方有权对其停止服务。</view>
+                    <view class="bxt2">3、甲方有权要求乙方出示星钻卡的权利。</view>
+                    <view class="bxt2">4、关于部分配套维修，甲方需在乙方预约或现场抵达时告知乙方。</view>
+                    <view class="bxt2">5、若乙方损坏相关配套设施，甲方有权向乙方要求赔偿。</view>
+                </view>
+                <view class="tt2">
+                    <view class="bxt1">第四条 乙方的权利与义务</view>
+                    <view class="bxt2">1、乙方在2021年8月1日——2021年10月10日在对应的合作商家消费时需出示星钻卡电子凭证即可享星河·山海半岛项目内相应配套商家的业主优惠。 </view>
+                    <view class="bxt2">2、星钻卡业主权益体验押金在星河银海湾项目开盘后，乙方可在小程序内申请退还，甲方在7日内进行无息退还；若乙方无提交申请，则甲方将在7日后，15日内自动退还（无息），本协议终止。</view>
+                    <view class="bxt2">3、每人限购2张，购卡后可享银海湾项目优先购房权、成功认购即可享有人民币5000元购房优惠；选房认购需持星钻卡电子凭证，一张卡仅限对应购买一套房源使用。</view>
+                    <view class="bxt2">4、协议书签订后乙方应及时支付星钻卡业主权益体验押金。</view>
+                    <view class="bxt2">5、在星河银海湾项目未开盘前乙方不得申请退还星钻卡业主权益体验押金。 </view>
+                    <view class="bxt2">6、乙方应遵守现场秩序并且爱护配套设施，若发生损坏则按照设施原价进行赔偿。 </view>
+                    <view class="bxt2">7、乙方有义务向甲方提供真实持卡人的姓名、身份证号码、个人联系电话。 </view>
+                </view>
+                <view class="tt2">
+                    <view class="bxt1">第五条 违约责任</view>
+                    <view class="bxt2">1、乙方需在约定的时间内完成产品交易，如未在规定时间内完成相关操作，由此产生的相关风险由乙方自行承担。 </view>
+                    <view class="bxt2">2、如因自然灾害等不可抗力因素导致双方未能在约定时间内完成交易，双方互不承担违约责任。</view>
+                    <view class="bxt2">3、未经双方同意不得单独解除协议，否则违约方需承担一切法律责任。</view>
+                    <view class="bxt2">4、双方需严格履行本合同项下相应的权利义务，如一方违反本合同约定，将承担守约方的经济损失。</view>
+                </view>
+                <view class="tt2">
+                    <view class="bxt1">第六条 争议的解决</view>
+                    <view class="bxt2">1、执行本协议所发生的或与本协议有关的一切争议，双方应通过友好协商解决。 </view>
+                    <view class="bxt2">2、如甲乙双方通过协商不能达成一致时，双方同意提交甲方所在地人民法院解决。</view>
+                    <view class="bxt2">3、在争议的处理过程中，除正在进行诉讼的部分外，协议的其他部分将继续执行。</view>
+                </view>
+                <view class="tt2">
+                    <view class="bxt1">第七条 不可抗力</view>
+                    <view class="bxt2">下列事件可认为是不可抗力事件：战争、动乱、地震、飓风、洪水、冰雹、雪灾等不能预见、不能避免、不能克服的客观情况。由于不可抗力原因，使双方或任何一方不能履行协议义务时，应立即以书面形式通知对方，致使协议无法按期履行或不能履行的，所造成的损失由双方各自承担。一方未尽通知义务的，应就扩大的损失负赔偿责任。按照不可抗力对履行协议的影响程度，由双方协商决定是否解除协议，或者部分免除履行协议的责任，或者延期履行协议。 </view>
+                </view>
+                <view class="tt2">
+                    <view class="bxt1">第八条 协议生效及其他</view>
+                    <view class="bxt2">本协议自双方同意阅读并完成缴费之时起生效。本协议的执行中，对其条款的任何变更、修改和增减或者增加相关附件，都须经双方协商同意并签署书面文件，作为本协议的组成部分，与本协议具有同等法律效力。</view>
+                    <view class="bxt2">我已阅读并遵守以上条款！</view>
+                </view>
+               
+            </scroll-view>
+        </view>
+        <view class="box_btn" wx:if="{{!ok}}">
+            <view class="box_btn1" bindtap="qx">取消</view>
+            <view class="box_btn2">我已阅读，同意（{{ty}}s）</view>
+        </view>
+        <view class="box_btn11" wx:else>
+            <view class="box_btn1" bindtap="qx">取消</view>
+            <view class="box_btn2" bindtap="tyxy">我已阅读，同意</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,52 @@
+<!--pages/payForOrder/payForOrder.wxml-->
+<wxs src="../../utils/subutils.wxs" module="tools" />
+<wxs module="filters" src="../hotel/hot.wxs"></wxs>
+<view class="main">
+    <view class="main-top">
+        <image src="/pages/images/74.png" class="top_bg"></image>
+    </view>
+    <view class="main-con">
+        <view class="zrf-con1">
+        <view class="zrf-pri">代付金额</view>
+        <view class="zrf-price">￥{{filters.toFiex(detail.money)}}元</view>
+        <view class="zrf-time">
+            订单有效截止时间：
+            <view>{{date}}</view>
+           
+        </view>
+      </view>
+      <view class="pay-con__title ref-box " style="">
+      <view class="pay-con__title_show">
+        <view class="pay-con__title_show_left">
+          <view>{{detail.cate_title}}</view>
+          <view class="title2">
+            <view style="margin-right: 26rpx">
+              <view class="title2-t1">规  格</view>
+              <view class="title2-t2">
+              {{detail.guige_title}}
+              </view>
+            </view>
+            <view>
+              <view class="title2-t1">预约时间</view>
+              <view class="title2-t2">{{detail.time}}</view>
+            </view>
+          </view>
+        </view>
+        <image class="pay-con__title_show_right" src="{{url}}{{detail.photo}}"  bindtap="seeImg" data-url="{{url}}{{detail.photo}}"></image>
+      </view>
+      <view class="zrf-con">
+          <view class="zrf-con_title">发起人信息</view>
+          <view class="users">
+            <view>
+              <image src="{{detail.headimgurl}}" class="uimg"></image>
+            </view>
+            <view>{{detail.nickname}}</view>
+            <view>{{detail.phone}}</view>
+          </view>
+      </view>
+    </view>
+    </view>
+
+    <view class="{{df_id==0 && detail.money_status==0?'liji':'liji1'}}" bindtap="{{df_id==0 && detail.money_status==0?'pay':''}}" data-type="0">立即支付</view>
+    <view class="{{df_id==0 && detail.money_status==0?'yuefu':'yuefu1'}}" bindtap="{{df_id==0 && detail.money_status==0?'pay':''}}" data-type="1">月付支付</view>
+</view>

@@ -1,0 +1,11 @@
+<!--pages/about/about.wxml-->
+<view wx:if="{{!about.w_url}}">
+<view class='img'>
+<!-- <image src='{{url}}/{{about.category_banner}}' wx:if="{{about.category_banner !=''}}"></image> -->
+</view>
+<view class='centent' style="font-size: 24rpx;"><rich-text nodes="{{content}}"></rich-text></view>
+</view>
+<view wx:else>
+  <web-view src="{{about.w_url}}"></web-view>
+</view>
+

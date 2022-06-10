@@ -1,0 +1,41 @@
+/* pages/familyDetail/familyDetail.wxss */
+page{
+    background: #f5f5f5;
+}
+.page{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30rpx 20rpx;
+} 
+.rich_img{
+    max-width: 100%;
+  }
+.cont{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    padding: 20rpx 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    font-size: 24rpx;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+}
+.date{
+    margin-top: 10rpx;
+    font-size: 20rpx;
+    width: 100%;
+    border-bottom: #f5f5f5 1rpx solid ;
+    text-align: center;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+}
+.con{
+    font-size: 22rpx;
+}

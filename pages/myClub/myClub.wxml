@@ -1,0 +1,18 @@
+<!--pages/myClub/myClub.wxml-->
+<view class="main">
+    <view class="item" wx:for="{{clubs}}" bindtap="toClub" data-idx="{{index}}">
+        <image src="{{item.img}}" class="item_left_img"></image>
+        <view class="item-right">
+            <view class="item_title">
+                <view class="item_t1">{{item.name}}</view>
+                <image src="/pages/images/club/c7.png" class="item_wx "  catchtap="sWx" data-idx="{{index}}"></image>
+            </view>
+            <view class="item_t2">成员 {{item.num}}人 <text>进行中活动 {{item.activities}}</text></view>
+            <view class="item_t3">{{item.intro}}</view>
+        </view>
+    </view>
+    <view class="wx" bindtap="cWx" hidden="{{wx?'':'hidden'}}">
+        <image src="{{wx_ewm}}" catchtap="ww" class="wx-ewm"></image>
+        <view class="wx_t">长按二维码申请入群</view> 
+    </view>
+</view>

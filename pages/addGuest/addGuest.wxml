@@ -1,0 +1,52 @@
+<!--pages/addGuest/addGuest.wxml-->
+<view class="page">
+<view class="add-guest">
+    <view class="add-guest__title">
+      添加客人信息：
+    </view>
+    <view class="add-guest__item">
+      <image src="/pages/images/12.png" class="add-guest__item_ico"></image>
+      <!-- <view class="add-guest__item_self">{{myself}}</view> -->
+      <view><input type="text" bindinput="name" placeholder="请输入您的名字" placeholder-class="phcolor" class="ipt"></input></view>
+    </view>
+    <view class="add-guest__item" wx:if="{{nums >1}}">
+      <image src="/pages/images/13.png" class="add-guest__item_ico"></image>
+      <view><input type="text" placeholder="输入客人姓名" model:value='{{p1}}' bindblur="bindblur"/></view>
+    </view>
+    <view class="add-guest__item" wx:if="{{nums >2}}">
+      <image src="/pages/images/13.png" class="add-guest__item_ico"></image>
+      <view><input type="text" placeholder="输入客人姓名" model:value='{{p2}}' bindblur="bindblur"/></view>
+    </view>
+    <view class="add-guest__item" wx:if="{{nums >3}}">
+      <image src="/pages/images/13.png" class="add-guest__item_ico"></image>
+      <view><input type="text" placeholder="输入客人姓名" model:value='{{p3}}' bindblur="bindblur"/></view>
+    </view>
+    <view class="add-guest__title">
+      订单信息：
+    </view>
+    <view class="pay-box">
+      <view class="order-title">
+        <view class="add-guest__item_self">场地预定金</view>
+        <view style="margin-left: auto; color: #999;">{{price}}元/人</view>
+      </view>
+      <view class="hr"></view>
+      <view class="sum">
+        <view>总计：{{price *num}}.00元</view>
+      </view>
+    </view>
+    <view class="add-guest__title">
+      预定政策：
+    </view>
+    <view class="pay-box box11">
+    <view style="margin-bottom: 10rpx">
+      1.更改取消需提前1天17点前,17点后取消场地预定金将不给予退还，场地预定金平日100元/人,假日300元/人。
+    </view>
+    <view>
+      2.场地预定金将于现场消费后自动扣取。
+    </view>
+    </view>
+    <view class="page-bottom-btn" bindtap="addGuest">
+      下一步
+    </view>
+  </view>
+</view>

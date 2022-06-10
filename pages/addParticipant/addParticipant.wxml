@@ -1,0 +1,100 @@
+<!--pages/addParticipant/addParticipant.wxml-->
+<view class="page">
+<!-- 展示页 -->
+    <view class="detail" hidden="{{show?'':'hidden'}}" style="margin-bottom: 120rpx;">
+      <view class="page-top">
+        <view>添加时段参与者（当前剩余{{num}}个名额）</view>
+      </view>
+      <view class="page-date__item">
+      <view>{{date}}</view>
+        <view style="margin-left:30rpx">{{title}}</view>
+        <view  style="color:#038c5b; margin-left: auto; margin-right: 14rpx;">余{{num}}
+          <image   src="/pages/images/7.png" class="item_next"></image>
+        </view>
+      </view>
+      <view class="page-date__item">
+        <image src="../images/12.png" class="item_ico"></image>
+        <!-- <view style="margin-left:32rpx;">{{selfName}}</view> -->
+        <!-- <view style="margin-left: 58rpx;color: #999999;">本人</view> -->
+        <view><input type="text" placeholder="请输入您的名字" placeholder-class="phcolor" class="ipt" style="margin-left: 30rpx;" model:value="{{bname}}"></input></view>
+
+
+      </view>
+      <view class="page-date__item">
+        <image src="../images/12.png" class="item_ico"></image>
+
+        <view><input type="number" placeholder="请输入您的电话" placeholder-class="phcolor" class="ipt" style="margin-left: 30rpx;" model:value="{{phone}}"></input></view>
+
+      </view>
+      <view class="page-date__item" wx:if="{{activity.is_sfz==1}}">
+        <image src="../images/12.png" class="item_ico"></image>
+
+        <view><input type="text" placeholder="请输入您的身份证" placeholder-class="phcolor" class="ipt" style="margin-left: 30rpx;" model:value="{{sfz}}"></input></view>
+
+      </view>
+
+
+     
+      <view class="page-date__item">
+        <image src="../images/12.png" class="item_ico"></image>
+        <view><input type="text" placeholder="请输入您的房号（选填）" placeholder-class="phcolor" class="ipt" style="margin-left: 30rpx;" model:value="{{fj}}"></input></view>
+      </view>
+
+      <view class="page-date__item" wx:for="{{parts}}">
+        <image src="../images/13.png" class="item_ico"></image>
+        <view style="margin-left:32rpx;color: #999999;">{{item.name}}</view>
+        <picker bindchange="bindPickerChange" style="margin-left: auto;" value="{{item.role}}" range="{{roles1}}" data-idx="{{index}}">
+          <view class="picker">
+            {{roles[item.role].name}}
+            <image src="/pages/images/9.png" class="picker_ico"></image>
+          </view>
+        </picker>  
+      </view>
+      <view class="page-date__item" bindtap="showAddOneParticipant">
+        <image src="../images/14.png" class="item_ico"></image>
+        <view style="margin-left:32rpx;color: #999999;">再添加一位参与者</view>
+      </view>
+      <view class="page-date__item" style="margin-bottom: 0;"  wx:if="{{activity.fx_title}}">
+        <image src="../images/12.png" class="item_ico"></image>
+        <view style="display: flex; align-items: center;">
+          <view style="margin: 0 10rpx;">{{activity.fx_title}}</view>
+          <radio-group bindchange="radioChange11"  style="display: flex; align-items: center;border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
+            <label class="" wx:for="{{pitems}}" wx:key="{{item.value}}" style="display: flex; align-items: center; margin-right: 40rpx;">
+              <view>
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view>{{item.name}}</view>
+            </label>
+          </radio-group>
+        </view>
+      </view>
+      <view wx:if="{{isR}}" class="page-date__item" style="margin: 0; padding-left: 30rpx; border-top-right-radius: 0; border-top-left-radius: 0;height: 60rpx; padding-bottom: 20rpx;">
+        <view>{{pitems[k].remark?pitems[k].remark:''}}</view>
+        <view style="margin-left: 30rpx; border: 1rpx solid #484848; padding-left: 10rpx;"><input type="number" placeholder="请输入个数" model:value="{{rnum}}"/></view>
+      </view>
+      <!-- 下一步 -->
+      <view class="next" bindtap="nextPage">下一步</view>
+  </view>
+
+  <!-- 添加参与者页面 -->
+  <view class="page-add" hidden="{{!show?'':'hidden'}}">
+    <view class="page-add__title">姓名</view>
+    <view class="page-add__input">
+      <input type="text" placeholder="请输入姓名" model:value="{{partName}}" />
+    </view>
+    <view class="page-add__title" wx:if="{{activity.is_sfz==1}}">身份证号码</view>
+    <view class="page-add__input" wx:if="{{activity.is_sfz==1}}">
+      <input type="idcard" placeholder="请输入身份证号码" model:value="{{partID}}" />
+    </view>
+    {{participant.partName}}
+    <view class="page-add__title">关系</view>
+    <view class="page-add__btns">
+      <view class="{{!item.act?'page-add__btn' : 'page-add__btn page-add__btn_active'}}" wx:for="{{roles}}" bindtap="checkRole" data-idx="{{index}}">{{item.name}}</view>
+    </view>
+    <!-- 按钮 -->
+    <view class="page-add-btn">
+      <view class="page-add-btn__cancel" bindtap="cancel" >取消</view>
+      <view class="page-add-btn__confirm" bindtap="addOneParticipant">确认</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,125 @@
+<!--pages/payForOrder/payForOrder.wxml-->
+<navBar></navBar>
+<view class="main">
+    <view class="main-top">
+        <image src="/pages/images/74.png" class="top_bg"></image>
+    </view>
+
+    <view class="main-con">
+        <view class="load" wx:if="{{type == 1}}">
+            <image src="/pages/images/72.png" class="loadico1"></image>正在占位中
+        </view>
+        <view class="load" wx:if="{{type == 2}}">
+            <image src="/pages/images/79.png" class="loadico"></image>恭喜你，占位成功！
+        </view>
+        <view class="load" wx:if="{{type == 3}}">
+            <image src="/pages/images/78.png" class="loadico"></image>占位失败，可申请退款。
+        </view>
+        <!--  -->
+        <view class="load1" wx:if="{{type == 2}}">
+            <image src="/pages/images/75.png" class="load1-bg"></image>
+            <view class="load1-item">
+                <view class="sj">
+                    <image src="/pages/images/y1.png" class="sj_1"></image>
+                    <view class="sj_2"></view>
+                    <image src="/pages/images/y2.png" class="sj_3"></image>
+                </view>
+                <view style="" class="load1_item1">
+                    <text>{{time}}</text> 
+                    <text>占位成功</text>
+                </view>
+                <view class="load1_item2">
+                    <text>{{time1}}</text> 
+                    <text style="margin-left: 8rpx;">正在占位置</text>
+                </view>
+            </view>
+            
+        </view>
+        <view class="load1" wx:if="{{type == 1}}">
+            <image src="/pages/images/75.png" class="load1-bg"></image>
+            <view class="load1-item">
+                <view class="sj">
+                    <image src="/pages/images/y1.png" class="sj_1"></image>
+                    <view class="sj_2"></view>
+                    <image src="/pages/images/y2.png" class="sj_3"></image>
+                </view>
+                <view style="" class="load1_item1">
+                    <text>{{time}}</text> 
+                    <text>正在占位置</text>
+                </view>
+                <view class="load1_item2">
+                    <text>{{time1}}</text> 
+                    <text style="margin-left: 8rpx;">提交订单</text>
+                </view>
+            </view>
+            
+        </view>
+        <view class="load1" wx:if="{{type == 3}}">
+            <image src="/pages/images/75.png" class="load1-bg"></image>
+            <view class="load1-item">
+                <view class="sj">
+                    <image src="/pages/images/y1.png" class="sj_1"></image>
+                    <view class="sj_2"></view>
+                    <image src="/pages/images/y2.png" class="sj_3"></image>
+                </view>
+                <view style="" class="load1_item1">
+                    <text>{{time}}</text> 
+                    <text>占位失败</text>
+                </view>
+                <view class="load1_item2">
+                    <text>{{time1}}</text> 
+                    <text style="margin-left: 8rpx;">{{msg}}</text>
+                </view>
+            </view>
+            
+        </view>
+        <!--  -->
+        <view class="load3">
+            <view class="load3_title">
+                <view>{{title}}</view>
+                <image src="/pages/images/76.png" class="load3_title_ico"></image>
+            </view>
+            <view class="load3_con">
+                <view class="lll">
+                    <image wx:if="{{type == 1}}" src="/pages/images/71.png" class="lll_img"></image>
+                    <image wx:if="{{type == 3}}" src="/pages/images/77.png" class="lll_img"></image>
+                    <image wx:if="{{type == 2}}" src="/pages/images/80.png" class="lll_img"></image>
+                </view>
+                <view class="load3_title1">订单信息：</view>
+                <view> 
+                    <text class="title1_t">场地</text>
+                    <text>{{data1.Booker}}</text>
+                </view>
+                <view> 
+                    <text class="title1_t">日期</text>
+                    <text>{{data1.PlayDate}}</text>
+                </view>
+                <view> 
+                    <text class="title1_t">场次</text>
+                    <text>{{data1.teetime}}</text>
+                </view>
+                <view class="rs"> 
+                    <text class="title1_t">人数</text>
+                    <text>{{data1.PersonNumber}}人</text>
+                    <view class="rs_item">
+                        <view class="res_item1" wx:for="{{data1.guest}}">
+                            <image src="/pages/images/73.png" class="rs_ico"></image>
+                            {{item}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="load3_con1" style="margin-bottom: 24rpx;">
+                <view style="color: #111111;">价格</view>
+                <view style="margin-left: auto;">{{data1.money}}.00元/人</view>
+            </view>
+            <view class="load3_con1">
+                <view style="color: #111111;width:1px;"></view>
+                <view style="font-weight: 700; text-align: right; color: #038c5b;margin-left:auto;">总计：{{data1.money*data1.PersonNumber}}.00元</view>
+            </view>
+        </view>
+        <view class="tuikuan" bindtap="tuikuan" wx:if="{{type == 3}}">
+            申请退款
+        </view>
+    </view>
+</view>

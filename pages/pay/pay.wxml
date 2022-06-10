@@ -1,0 +1,303 @@
+<!--pages/pay/pay.wxml-->
+<wxs module="filters" src="../hotel/hot.wxs"></wxs>
+<navBar pageName="星遇度假酒店"></navBar>
+<view class="pay-page">
+  <!-- <view class="pay-top" style="height:{{navHeight*2 + 124*2}}rpx"></view> -->
+  <view class="pay-top" style="height:{{navHeight*2 + 150}}rpx"></view>
+  <view class="pay-con">
+  <!--  -->
+    <view class="pay-con__title">
+      <view class="pay-con__title_show">
+        <view class="pay-con__title_show_left">
+          <view>{{hotel}}</view>
+          <view class="show_left_title">{{title}}</view>
+          <view class="show_left_bed">{{wDate}} ─ {{wDate2}} 共{{days}}晚</view>
+        </view>
+        <image class="pay-con__title_show_right" src="{{url}}{{photo}}" mode="aspectFill" bindtap="seeImg" data-url="{{url}}{{photo}}"></image>
+      </view>
+      <!-- 时间 -->
+       <!-- 入住时间 -->
+   
+      <!-- <view class="pay-con__date_show">
+        <view class="date_show_date">
+          <view class="date_show_title">入住</view>
+          <picker mode="date" value="{{wDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+            <view class="picker date_show_d">
+              {{date}}
+            </view>
+          </picker>
+        </view>
+        <view class="date_show_days">
+          <view class="date_show_days_txt">共{{days}}晚</view>
+          <image src="../images/7.png" class="date_show_days_ico"></image>
+        </view>
+        <view class="date_show_date">
+          <view class="date_show_title">离店</view>
+          <picker mode="date" value="{{wDate2}}" start="{{startDate2}}" end="{{endDate}}" bindchange="bindDateChange2">
+            <view class="picker date_show_d">
+              {{date2}}
+            </view>
+          </picker>
+        </view>
+      </view> -->
+      <view>
+      
+      </view>
+    </view>
+    <view class="hotel-in-item">
+      <view class="item-left">
+      <view class="in-item">
+        <view class="item-date">
+          <view mode="date" value="{{wDate}}" start="{{startDate}}" end="{{endDate1}}" bindtap="bindDateChange">
+            <view class="picker date_show_d">
+              {{date}}
+            </view>
+          </view>
+        </view>
+        <view class="item-text">入住</view>
+      </view>
+      <view class="item-ts">
+        共{{days}}晚
+      </view>
+      <view class="in-item">
+        <view class="item-date">
+          <view mode="date" value="{{wDate2}}" start="{{startDate2}}" end="{{endDate2}}" bindtap="bindDateChange2">
+            <view class="picker date_show_d">
+              {{date2}}
+            </view>
+          </view>
+        </view>
+        <view class="item-text">离店</view>
+      </view>
+    </view>
+      <image src="../images/hotel/2.png" class="in-item_next"></image>
+    </view>
+  <!-- 住房人信息 -->
+  <view class="pay-con__person">
+    <view class="pay-con__person_title">住房人信息登记</view>
+    <form class="pay-con__person_form">
+      <view class="pay-con__person_form_input">
+        <view>住客姓名</view>
+        <!-- <input type="text" model:value="{{person.name}}" placeholder="请输入姓名" class="form_input_box"/> -->
+        <input type="text" bindinput="name" placeholder="请输入您的名字" placeholder-class="phcolor" class="form_input_box"></input>
+      </view>
+      <view class="pay-con__person_form_input">
+        <view>联系方式</view>
+        <!-- <input type="text" model:value="{{person.tel}}" placeholder="请输入电话号码" class="form_input_box"/> -->
+        <input type="number" maxlength="11" placeholder="请输入电话号码" placeholder-class="phcolor" class="form_input_box" bindinput="isphone" value="{{phone}}"></input>
+      </view>
+
+      <view class="pay-con__person_form_input">
+        <view>身份证号</view>
+        <!-- <input type="text" model:value="{{person.tel}}" placeholder="请输入电话号码" class="form_input_box"/> -->
+        <input type="text" placeholder="请输入身份证号" placeholder-class="phcolor" class="form_input_box" bindinput="issfz" value="{{sfz}}"></input>
+      </view>
+
+
+      <view class="pay-con__person_form_input">
+        <view>备注信息</view>
+        <!-- <input type="text" model:value="{{person.comment}}" placeholder="请输入您需要的备注" class="form_input_box"/> -->
+        <input type="text" bindinput="remark" placeholder="请输入您需要的备注" placeholder-class="phcolor" class="form_input_box"></input>
+      </view>
+
+      <view class="pay-con__person_form_input">
+        <view>住房押金</view>
+        <input type="text" placeholder="{{ya_money}}" placeholder-class="phcolor" class="form_input_box" disabled></input>
+      </view>
+
+
+    </form>
+  </view>
+
+  <!-- 住房政策 -->
+  <view class="hotel-detail">
+      <view class="hotel-detail__title " style="border-bottom:4rpx solid #fafafa; padding-bottom: 22rpx">入住政策</view>
+      <view class="hotel-detail1__con" >
+
+        <view> 
+        订单确认后2小时内可免费取消修改，若未入住或过时取消修改将收取您全额房费。
+        </view>
+        <view> 
+        平台会根据您的付款方式扣除房费，订单需等酒店或供应商确认后生效，订单确认结果以平台app通知为准，如订单不确认将全额退款至您的付款账户。
+        </view> 
+        <view> 
+        客房入住时间为：当日下午14:00后，如提前到店，酒店视当前客房情况决定是否为您提前办理入住。
+        </view>
+        <view> 
+        退房时间为:入住次日12点前办理，如需提供物品寄存等服务，请您将物品存放至美好生活馆，贵重及易碎物品请勿寄存，请自行保管。
+        </view>
+        <view>联系电话：<text class="c3" bindtap="call">0752-8678820</text></view>
+        
+      </view>
+    </view>
+  </view>
+
+  <!-- 支付 -->
+  <view class="bott">
+  <view class="bott1">
+    <view class="bott1-item">
+      <view class="bt_title">优惠券</view>
+      <view class="title-right yh-right" bindtap="showCoupon">
+        <view>{{cou}}</view>
+        <image src="../images/hotel/2.png" alt="" class="yh_next"/>
+      </view>
+    </view>
+    <view class="bott1-item" >
+      <view class="bt_title">房费</view>
+      <view class="title-right">
+        <view>{{moneys}}元</view>
+        <view>{{user_dis==1?'未打':user_dis*10}}折(优惠{{filters.toFiex(yuan_moneys-(moneys*1))}}元)</view>
+      </view>
+    </view>
+    <view class="bott1-item">
+      <view class="bt_title">押金</view>
+      <view class="title-right">
+        <view>{{ya_money}}元</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="yhq-box" wx:if="{{yhq}}">
+      <view class="yhq-con">
+        <view style="margin-bottom: 30rpx; font-size: 34rpx;">我的优惠券</view>
+        <scroll-view scroll-y="true" style="height: 468rpx;" class="yhq-scr" show-scrollbar="{{false}}" enhanced="{{true}}">
+          <radio-group bindchange="radioChange" class="yhq-flex">
+            <label class="yhq-item" wx:for="{{coupon}}" wx:key="{{item.title}}">
+                <view>{{item.name}}</view>
+                <view class="yh-right">
+                  <view class="yh-title">{{item.zhekou}}</view>
+                  <view><radio color="#86B7C1" value="{{index}}" checked="{{item.check}}" /></view>
+                </view>
+            </label>
+          </radio-group>
+        </scroll-view>
+        <view class="yhq-btns">
+          <view class="yhq-qx" bindtap="hideCoupon">取消</view>
+          <view class="yhq-qr" bindtap="qrCoupon">确认</view>
+        </view>
+      </view>
+  </view>
+
+ 
+  <view class="pay-box">
+    <view class="money">
+      <!-- <view class="yajin">内含押金元</view> -->
+      <view class="money-1">
+        <view style="margin-bottom: 6rpx;">￥</view><view style="font-size:36rpx">{{moneys*1+ya_money*1}}元</view> 
+      </view>
+      <!-- <view style="margin-left: 28rpx"> 
+        <view class="money-3" wx:if="{{user_dis!=1}}"> {{user_dis*10}}折 </view>
+        <view class="money-2">￥{{yuan_moneys}}</view>
+      </view> -->
+    </view>
+    <view class="pays">
+      <view class="pay_submit" style="background:#FFAA55;margin-right: 20rpx" bindtap="pay1">找人付</view>
+      <view class="pay_submit" bindtap="{{pay}}">立即支付</view>
+    </view>
+  </view>
+</view>
+
+  <!--  -->
+  <view class="zrf" hidden="{{zrf?'':'hidden'}}">
+    <view class="pay-con__title ref-box" style="">
+      <view class="pay-con__title_show">
+        <view class="pay-con__title_show_left">
+          <view>{{hotel}}</view>
+          <view class="title2">
+            <view style="margin-right: 26rpx">
+              <view class="title2-t1">{{title}}</view>
+            </view>
+            <view>
+              <view class="title2-t1">入住时间</view>
+              <view class="title2-t2">{{wDate}}-{{wDate2}}</view>
+            </view>
+          </view>
+        </view>
+        <image class="pay-con__title_show_right" src="{{url}}{{photo}}"  bindtap="seeImg" data-url="{{url}}{{photo}}"></image>
+      </view>
+      <view class="zrf-con">
+          <view class="zrf-con_title">住房人信息登记</view>
+          <view class="zrf-con_txt">住客姓名 <text class="txt1">{{name}}</text></view>
+          <view class="zrf-con_txt">联系方式 <text class="txt1">{{tel}}</text></view>
+          <view class="zrf-con_txt">备注信息 <text class="txt1">{{remark}}</text></view>
+          <view class="zrf-con_txt">身份证 <text class="txt1">{{sfz}}</text></view>
+      </view>
+      <view class="zrf-con1">
+        <view class="zrf-pri">代付金额</view>
+        <view class="zrf-price">￥{{moneys*1+ya_money*1}}元</view>
+        <button class="zrf-share" open-type="share">分享代付</button>
+        <view class="zrf-cancel" bindtap="dd">查看订单</view>
+        <view class="zrf-cancel" bindtap="qx">取消</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="up_box bo11" wx:if="{{tk}}">
+    <view class="box box1  {{xy?'up_box1':''}}" style="height: 746rpx; width:568rpx">
+        <text class="box_t1">订房须知</text>
+        <view class="box_t2" style="width:474rpx">
+            <view>
+                1、星遇酒店客房退房时需先查房，请您移步至公寓一楼美好生活馆办理，否则押金无法自动退回。或联系服务电话：0752-8678820；
+            </view>
+            <view style="color: red; ">
+                2、客房入住时间为预定日下午14：00， 退房时间为次日12：00前，请您准时退房，为了您和他人的入住体验请勿超时；
+            </view>
+            <view>
+                3、入住时，如遇客房维修或其他故障，将由美好生活馆前台安排房间调整；
+            </view>
+            <view>
+                4、客房禁止携带宠物、危险化学物品、易燃易爆物品入住，严禁用于非法或从事非法活动人员住宿。
+            </view>
+        </view>
+        <view class="box_btn123" >
+            <view class="box_b1" bindtap="qx1" st>取消</view>
+            <view class="box_b2" bindtap="pay2" style="clor:#606060">确认</view>
+        </view>
+    </view>
+</view>
+
+
+
+<view class="time-box" wx:if="{{time_box}}" bindtap="colbox">
+  <view catchtap="cc" style="width:88%">
+
+  <my-calendar style="width: 88%" 
+  title="选择住店起始时间"
+  useType="range"
+  start="{{start}}"
+  min="{{startDate}}"
+  stop="{{stop}}"
+  bind:confirm="select"
+  touchColor="#FF6D14"
+  touchFontColor="#fff"
+  background="{{theme.bg}}"
+  fontColor="{{theme.fontColor}}"
+  rangeColor="{{theme.rangeColor}}"
+  touchFontColor="#fff"
+  rangeStartColor="{{theme.rangeStartColor}}"
+  rangeEndColor="{{theme.rangeEndColor}}"
+/>
+</view>
+</view>
+<view class="time-box" wx:if="{{time_box1}}" bindtap="colbox1">
+  <view catchtap="cc" style="width:88%">
+
+  <my-calendar style="width: 88%" 
+  title="选择离店时间"
+  useType="touch"
+  start="{{start1}}"
+  min="{{startDate2}}"
+  touchColor="#FF6D14"
+  touchFontColor="#fff"
+  stop="{{stop}}"
+  date="{{wDate2}}"
+  bind:confirm="select1"
+  background="{{theme.bg}}"
+  fontColor="{{theme.fontColor}}"
+  rangeColor="{{theme.rangeColor}}"
+  rangeStartColor="{{theme.rangeStartColor}}"
+  rangeEndColor="{{theme.rangeEndColor}}"
+/>
+</view>
+</view>

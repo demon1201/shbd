@@ -1,0 +1,38 @@
+/* pages/registration/registration.wxss */
+
+.page-calendar{
+  padding-top: 24rpx;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 0px 0px 16rpx 16rpx;
+  box-shadow: 0px 6rpx 12rpx 0px rgba(0,0,0,0.04); 
+}
+.page-date{
+  margin-top: 36rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+.page-date__item{
+  width: 100%;
+  height: 94rpx;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 16rpx;
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  margin-bottom: 20rpx;
+}
+.item_next{
+  width: 10rpx;
+  height: 18rpx;
+}

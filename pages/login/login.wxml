@@ -1,0 +1,28 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <image src='{{url}}/{{info_banner.info_banner}}' mode='widthFix' class='user_img'></image>
+    <view class="content_title">星河山海半岛</view>
+    <view class="content_txt">您暂未授权“星河山海半岛”小程序获取您的信息，将无法正常使用小程序功能。如需要正常使用，请点击“微信授权”按钮打开头像、昵称、手机号等信息的授权</view>
+      <!-- <button open-type="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfos" class='login-bar'>微信
+      一键登录</button> -->
+      <button  class='login-bar' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >手机号码一键登录</button>
+      <view class="btn2">
+      <button  bindtap="fh" class='enter2'>返回</button>
+    </view>
+</view>
+  <!-- 授权弹窗 -->
+<block>
+	<view class='enter_info {{blo}}' wx:if="{{open==true}}">
+		<view class='enter_ab {{blo}}' >
+			<view class='enter_rel'>
+				<view class='enter_tip'>提示</view>
+				<view class='enter_p'>需要您的授权,请按确认并在微信授权中点击"允许"按钮完成授权。</view>
+        <button class='enter_cancel' bindtap='qx'>取消</button>
+        <!-- <button class='enter_btn' open-type="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfos">确认</button> -->
+        <button wx:if="{{canIUseGetUserProfile}}"  class='enter_btn'  bindtap="getUserProfile"> 确认 </button>
+      <button wx:elif="{{canIUse}}" class='enter_btn'  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 确认 </button>
+
+			</view>
+		</view>
+	</view>
+</block>

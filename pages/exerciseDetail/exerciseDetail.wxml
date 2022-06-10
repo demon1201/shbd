@@ -1,0 +1,96 @@
+<!--pages/hotel/hotel.wxml-->
+<navBar></navBar>
+<view class="hotel-page">
+<!-- 轮播 -->
+  <view style="height: {{navHeight*2 + 216*2}}rpx;" class="hotel-page__swiper">
+    <swiper indicator-dots="{{indicatorDots}}" style="height: {{navHeight*2 + 216*2}}rpx;"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperTab'>
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+              <image src="{{item}}" class="hotel-swiper__img"  style="height: {{navHeight*2 + 216*2}}rpx;"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="num_box" style="top: {{navHeight*2 + 133*2}}rpx;">
+        <view class="num"> {{n}} / {{ns}} </view>
+      </view>
+    </view>
+  <!--  -->
+  <view class="hotel-con">
+  <!-- 乐园 -->
+    <view class="hotel-con__top">
+      <image src="../images/hotel/1.png" class="top_bg"></image>
+      <view class="top_con">
+        <view class="top_con_title">
+          <view class="title_txt">{{title}}</view>
+          <image src="../images/hotel/star.png" wx:for="{{5-(5-star)}}" class="star"></image>
+          <image src="../images/hotel/star.png" wx:for="{{5-star}}" class="star"></image>
+          <view class="top_fenxiang">
+            <image src="../images/hotel/10.png"></image>
+            <view>分享</view>
+          </view>
+        </view>
+        <!-- tag -->
+        <view class="hotel-tag"> 
+          <view class="hotel-tag_item" wx:for="{{tags}}">{{item}}</view>
+        </view>
+        <!-- 营业时间 -->
+        <view class="openTime"> 
+          <view style="font-weight: 700;">营业时间：</view>
+          <view>{{openTime}}</view>
+          <view class="open_ico">
+            <image src="../images/hotel/8.png" class="open_ico1"></image>
+            <image src="../images/hotel/7.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="hotel-con__address">
+      <view class="address_item">
+        <image src="../images/hotel/5.png"></image>
+        <view class="address_item_text">{{address}}</view>
+      </view>
+      <view class="address_item">
+        <image src="../images/hotel/6.png"></image>
+        <view class="address_item_text">联系电话：{{addressTel}}</view>
+      </view>
+      <!-- 展示图 -->
+      <view class="address_item_imgs">
+        <image src="{{item}}" wx:for="{{address_item_imgs}}" wx:key="{{item}}"></image>
+      </view>
+    </view>
+
+    <!-- 类目 -->
+    <view class="hotel-detail">
+      <view class="hotel-detail__title">项目</view>
+      <view class="hotel-detail__con">
+      <view class="con_con">
+        <view class="hotel-detail_item" wx:for="{{detail_items}}">
+          <image src="{{item.img}}"></image>
+          <view class="detail_item_right">
+            <view>{{item.title}}</view>
+            <view class="tt">{{item.tt}}</view>
+          </view>
+        </view>  
+      </view>
+      </view>
+    </view>
+     <!-- 游玩须知 -->
+    <view class="hotel-detail" style="margin-bottom: 32rpx;height: 432rpx;">
+      <view class="hotel-detail__title " style="border-bottom:4rpx solid #fafafa;">简介</view>
+      <view class="hotel-detail1__con" >
+        <view style="color: #333333; line-height: 22px;font-size:22rpx"> 
+        <view> 瑜伽，不只是一套流行或时髦的健身运动这么简单。 </view>
+        <view> 瑜伽是一个非常古老的能量知识修炼方法，集哲学、科学和艺术于一身。</view>
+        <view> 瑜伽的基础建立在古印度哲学上，数千年来，心理、生理和精神上的戒律已经成为印度文化中的一个重要组成部分。</view>
+        <view> 古代的瑜伽信徒发展了瑜伽体系，因为他们深信通过运动身体和调控呼吸，可以控制心智和情感，以及保持健康的身体。</view>      
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
